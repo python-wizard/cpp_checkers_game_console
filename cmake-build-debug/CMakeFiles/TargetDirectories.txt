@@ -1,0 +1,3 @@
+/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/checkers_console.dir
