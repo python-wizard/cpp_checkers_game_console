@@ -89,17 +89,92 @@ CMakeFiles/checkers_console.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers_console.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/byun/programowanie/checkers_console/main.cpp -o CMakeFiles/checkers_console.dir/main.cpp.s
 
+CMakeFiles/checkers_console.dir/sources/board.cpp.o: CMakeFiles/checkers_console.dir/flags.make
+CMakeFiles/checkers_console.dir/sources/board.cpp.o: ../sources/board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/checkers_console.dir/sources/board.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers_console.dir/sources/board.cpp.o -c /home/byun/programowanie/checkers_console/sources/board.cpp
+
+CMakeFiles/checkers_console.dir/sources/board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers_console.dir/sources/board.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/byun/programowanie/checkers_console/sources/board.cpp > CMakeFiles/checkers_console.dir/sources/board.cpp.i
+
+CMakeFiles/checkers_console.dir/sources/board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers_console.dir/sources/board.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/byun/programowanie/checkers_console/sources/board.cpp -o CMakeFiles/checkers_console.dir/sources/board.cpp.s
+
+CMakeFiles/checkers_console.dir/sources/man.cpp.o: CMakeFiles/checkers_console.dir/flags.make
+CMakeFiles/checkers_console.dir/sources/man.cpp.o: ../sources/man.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/checkers_console.dir/sources/man.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers_console.dir/sources/man.cpp.o -c /home/byun/programowanie/checkers_console/sources/man.cpp
+
+CMakeFiles/checkers_console.dir/sources/man.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers_console.dir/sources/man.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/byun/programowanie/checkers_console/sources/man.cpp > CMakeFiles/checkers_console.dir/sources/man.cpp.i
+
+CMakeFiles/checkers_console.dir/sources/man.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers_console.dir/sources/man.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/byun/programowanie/checkers_console/sources/man.cpp -o CMakeFiles/checkers_console.dir/sources/man.cpp.s
+
+CMakeFiles/checkers_console.dir/sources/king.cpp.o: CMakeFiles/checkers_console.dir/flags.make
+CMakeFiles/checkers_console.dir/sources/king.cpp.o: ../sources/king.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/checkers_console.dir/sources/king.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers_console.dir/sources/king.cpp.o -c /home/byun/programowanie/checkers_console/sources/king.cpp
+
+CMakeFiles/checkers_console.dir/sources/king.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers_console.dir/sources/king.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/byun/programowanie/checkers_console/sources/king.cpp > CMakeFiles/checkers_console.dir/sources/king.cpp.i
+
+CMakeFiles/checkers_console.dir/sources/king.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers_console.dir/sources/king.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/byun/programowanie/checkers_console/sources/king.cpp -o CMakeFiles/checkers_console.dir/sources/king.cpp.s
+
+CMakeFiles/checkers_console.dir/sources/piece.cpp.o: CMakeFiles/checkers_console.dir/flags.make
+CMakeFiles/checkers_console.dir/sources/piece.cpp.o: ../sources/piece.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/checkers_console.dir/sources/piece.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers_console.dir/sources/piece.cpp.o -c /home/byun/programowanie/checkers_console/sources/piece.cpp
+
+CMakeFiles/checkers_console.dir/sources/piece.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers_console.dir/sources/piece.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/byun/programowanie/checkers_console/sources/piece.cpp > CMakeFiles/checkers_console.dir/sources/piece.cpp.i
+
+CMakeFiles/checkers_console.dir/sources/piece.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers_console.dir/sources/piece.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/byun/programowanie/checkers_console/sources/piece.cpp -o CMakeFiles/checkers_console.dir/sources/piece.cpp.s
+
+CMakeFiles/checkers_console.dir/sources/other.cpp.o: CMakeFiles/checkers_console.dir/flags.make
+CMakeFiles/checkers_console.dir/sources/other.cpp.o: ../sources/other.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/checkers_console.dir/sources/other.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers_console.dir/sources/other.cpp.o -c /home/byun/programowanie/checkers_console/sources/other.cpp
+
+CMakeFiles/checkers_console.dir/sources/other.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers_console.dir/sources/other.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/byun/programowanie/checkers_console/sources/other.cpp > CMakeFiles/checkers_console.dir/sources/other.cpp.i
+
+CMakeFiles/checkers_console.dir/sources/other.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers_console.dir/sources/other.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/byun/programowanie/checkers_console/sources/other.cpp -o CMakeFiles/checkers_console.dir/sources/other.cpp.s
+
 # Object files for target checkers_console
 checkers_console_OBJECTS = \
-"CMakeFiles/checkers_console.dir/main.cpp.o"
+"CMakeFiles/checkers_console.dir/main.cpp.o" \
+"CMakeFiles/checkers_console.dir/sources/board.cpp.o" \
+"CMakeFiles/checkers_console.dir/sources/man.cpp.o" \
+"CMakeFiles/checkers_console.dir/sources/king.cpp.o" \
+"CMakeFiles/checkers_console.dir/sources/piece.cpp.o" \
+"CMakeFiles/checkers_console.dir/sources/other.cpp.o"
 
 # External object files for target checkers_console
 checkers_console_EXTERNAL_OBJECTS =
 
 checkers_console: CMakeFiles/checkers_console.dir/main.cpp.o
+checkers_console: CMakeFiles/checkers_console.dir/sources/board.cpp.o
+checkers_console: CMakeFiles/checkers_console.dir/sources/man.cpp.o
+checkers_console: CMakeFiles/checkers_console.dir/sources/king.cpp.o
+checkers_console: CMakeFiles/checkers_console.dir/sources/piece.cpp.o
+checkers_console: CMakeFiles/checkers_console.dir/sources/other.cpp.o
 checkers_console: CMakeFiles/checkers_console.dir/build.make
 checkers_console: CMakeFiles/checkers_console.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable checkers_console"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable checkers_console"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/checkers_console.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

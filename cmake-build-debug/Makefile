@@ -169,6 +169,141 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sources/board.o: sources/board.cpp.o
+
+.PHONY : sources/board.o
+
+# target to build an object file
+sources/board.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/board.cpp.o
+.PHONY : sources/board.cpp.o
+
+sources/board.i: sources/board.cpp.i
+
+.PHONY : sources/board.i
+
+# target to preprocess a source file
+sources/board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/board.cpp.i
+.PHONY : sources/board.cpp.i
+
+sources/board.s: sources/board.cpp.s
+
+.PHONY : sources/board.s
+
+# target to generate assembly for a file
+sources/board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/board.cpp.s
+.PHONY : sources/board.cpp.s
+
+sources/king.o: sources/king.cpp.o
+
+.PHONY : sources/king.o
+
+# target to build an object file
+sources/king.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/king.cpp.o
+.PHONY : sources/king.cpp.o
+
+sources/king.i: sources/king.cpp.i
+
+.PHONY : sources/king.i
+
+# target to preprocess a source file
+sources/king.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/king.cpp.i
+.PHONY : sources/king.cpp.i
+
+sources/king.s: sources/king.cpp.s
+
+.PHONY : sources/king.s
+
+# target to generate assembly for a file
+sources/king.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/king.cpp.s
+.PHONY : sources/king.cpp.s
+
+sources/man.o: sources/man.cpp.o
+
+.PHONY : sources/man.o
+
+# target to build an object file
+sources/man.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/man.cpp.o
+.PHONY : sources/man.cpp.o
+
+sources/man.i: sources/man.cpp.i
+
+.PHONY : sources/man.i
+
+# target to preprocess a source file
+sources/man.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/man.cpp.i
+.PHONY : sources/man.cpp.i
+
+sources/man.s: sources/man.cpp.s
+
+.PHONY : sources/man.s
+
+# target to generate assembly for a file
+sources/man.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/man.cpp.s
+.PHONY : sources/man.cpp.s
+
+sources/other.o: sources/other.cpp.o
+
+.PHONY : sources/other.o
+
+# target to build an object file
+sources/other.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/other.cpp.o
+.PHONY : sources/other.cpp.o
+
+sources/other.i: sources/other.cpp.i
+
+.PHONY : sources/other.i
+
+# target to preprocess a source file
+sources/other.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/other.cpp.i
+.PHONY : sources/other.cpp.i
+
+sources/other.s: sources/other.cpp.s
+
+.PHONY : sources/other.s
+
+# target to generate assembly for a file
+sources/other.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/other.cpp.s
+.PHONY : sources/other.cpp.s
+
+sources/piece.o: sources/piece.cpp.o
+
+.PHONY : sources/piece.o
+
+# target to build an object file
+sources/piece.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/piece.cpp.o
+.PHONY : sources/piece.cpp.o
+
+sources/piece.i: sources/piece.cpp.i
+
+.PHONY : sources/piece.i
+
+# target to preprocess a source file
+sources/piece.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/piece.cpp.i
+.PHONY : sources/piece.cpp.i
+
+sources/piece.s: sources/piece.cpp.s
+
+.PHONY : sources/piece.s
+
+# target to generate assembly for a file
+sources/piece.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/piece.cpp.s
+.PHONY : sources/piece.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -181,6 +316,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sources/board.o"
+	@echo "... sources/board.i"
+	@echo "... sources/board.s"
+	@echo "... sources/king.o"
+	@echo "... sources/king.i"
+	@echo "... sources/king.s"
+	@echo "... sources/man.o"
+	@echo "... sources/man.i"
+	@echo "... sources/man.s"
+	@echo "... sources/other.o"
+	@echo "... sources/other.i"
+	@echo "... sources/other.s"
+	@echo "... sources/piece.o"
+	@echo "... sources/piece.i"
+	@echo "... sources/piece.s"
 .PHONY : help
 
 

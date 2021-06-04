@@ -80,7 +80,37 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/byun/programowanie/checkers_console/include/board.h">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/include/king.h">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/include/man.h">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/include/other.h">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/include/piece.h">
+			<Option target="checkers_console"/>
+		</Unit>
 		<Unit filename="/home/byun/programowanie/checkers_console/main.cpp">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/sources/board.cpp">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/sources/king.cpp">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/sources/man.cpp">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/sources/other.cpp">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/sources/piece.cpp">
 			<Option target="checkers_console"/>
 		</Unit>
 		<Unit filename="/home/byun/programowanie/checkers_console/CMakeLists.txt">
