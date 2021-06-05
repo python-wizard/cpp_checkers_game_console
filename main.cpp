@@ -24,9 +24,53 @@ int main() {
 
     Board board1;
     board1.print_board();
-    board1.squares_of_pieces[0]->
+    int row = board1.squares_of_pieces[0]->calculate_row(0);
+    cout << "row: " << row;
 
-    board1.move_piece(8,12);
+    int loc = board1.squares_of_pieces[0]->calculate_location(0, 0);
+    cout << "loc 0 0: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(0, 1);
+    cout << "loc 0 1: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(0, 3);
+    cout << "loc 0 3: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(0, 5);
+    cout << "loc 0 5: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(0, 7);
+    cout << "loc 0 7: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(1, 0);
+    cout << "loc 1 0: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(2, 1);
+    cout << "loc 2 1: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(7, 7);
+    cout << "loc 7 7: " << loc;
+
+    loc = board1.squares_of_pieces[0]->calculate_location(7, 6);
+    cout << "loc 7 6: " << loc;
+
+    board1.whole_move_procedure(0, 4);
+    board1.print_board();
+
+    board1.whole_move_procedure(8, 12);
+    board1.print_board();
+
+    board1.whole_move_procedure(12, 16);
+    board1.print_board();
+
+    board1.whole_move_procedure(20, 16);
+    board1.print_board();
+
+//    board1.squares_of_pieces[0]->generate_valid_moves();
+//
+//    board1.squares_of_pieces[0]->print_valid_moves();
+
+//    board1.move_piece(8,12);
 
 
 //    int p[2];

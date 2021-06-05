@@ -48,15 +48,6 @@ int Board::initiate_pieces_array() {
 
 void Board::print_board() {
     cout << "     0     1     2     3     4     5     6     7    \n";
-//    cout << "  +-----------------------------------------------+";
-//    cout << "\n";
-//    printf("0 | %c | %c | %c | %c", board->spaces[0][0]->player, board->spaces[1][0]->player,
-//           board->spaces[2][0]->player, board->spaces[3][0]->player);
-//    printf(" | %c | %c | %c | %c |", board->spaces[4][0]->player, board->spaces[5][0]->player,
-//           board->spaces[6][0]->player, board->spaces[7][0]->player);
-//    printf("\n");
-//    printf("  ---------------------------------");
-//    printf("\n");
 
     int i, j=0;
     for (i=0; i<32; i++) {
@@ -64,9 +55,6 @@ void Board::print_board() {
             cout << "  +-----------------------------------------------+\n";
             cout << i/4 << " |";
         }
-
-//        printf("%d | %c | %c | %c | %c", board->spaces[0][0]->player, board->spaces[1][0]->player,
-//               board->spaces[2][0]->player, board->spaces[3][0]->player);
 
         if ((j%2) ==1) {
             cout << "     |";
@@ -113,17 +101,72 @@ void Board::print_squares() {
     }
 }
 
-void Board::print_valid_moves(int *valid_moves, int size) {
-    int i;
-    for (i=0; i<size; i++) {
-        if (valid_moves[i] != NULL) {
-//            printf("%d ", valid_moves[i]);
-            cout << setw(4) << valid_moves[i]; // "%d ", valid_moves[i]);
+int Board::whole_move_procedure(int from, int to) {
+    int empty = check_space_empty(to);
+
+    if (empty == 0) {
+        cout << "For piece at " << from << " can't move to " << to
+             << ". The space is not empty. Choose a different square." << endl;
+        return 0;
+    } else {
+        vector<int> moves_proposal;
+        vector<int> moves_valid;
+        moves_proposal = (squares_of_pieces[from]->generate_moves_proposal());
+
+        for (int &move : moves_proposal) {
+            std::cout << "valid move maybe: " << move << endl;
+            empty = check_space_empty(move);
+            if (empty == 1) {
+                moves_valid.push_back(move);
+                std::cout << "valid move : " << move << endl;
+            }
+        }
+        std::cout << '\n';
+        for (int &move_valid : moves_valid) {
+            if (move_valid == to) {
+                if (squares_of_pieces[to] == NULL) {
+                    squares_of_pieces[to] = squares_of_pieces[from];
+                    squares_of_pieces[from]->move(from, to);
+                    squares_of_pieces[from] = NULL;
+
+                } else {
+                    cout << "Something went wrong with a pointer";
+                }
+
+                cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
+                return 1;
+            }
         }
 
-    }
 
+        cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
+    }
 }
+//        print_valid_moves(valid_moves, 8);
+//        int valid_move = check_move_in_valid_moves(to, valid_moves, 8);
+//
+//        if (valid_move == 1) {
+//
+//            if (squares_of_pieces[to] == NULL) {
+//                squares_of_pieces[to] = squares_of_pieces[from];
+//                squares_of_pieces[from]->move(from, to);
+//                squares_of_pieces[from] = NULL;
+//
+//            }
+//            else {
+//                cout << "Something went wrong with a pointer";
+//            }
+//            cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
+//        }
+//        else {
+//            cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
+////            cout << "For piece at %d can't move to %d, it's not a valid move", from, to);
+//        }
+//
+//    }
+//
+//}
+
 
 int Board::check_move_in_valid_moves(int to, int* valid_moves, int size) {
     int i;
@@ -145,33 +188,34 @@ int Board::move_piece(int from, int to) {
         cout << "For piece at %d can't move to %d. The space is not empty. Choose a different square.", from, to;
         return 0;
     }
+//
+//    else {
+//        int valid_moves[8];
+//        clean_array(valid_moves);
+//        return_valid_moves(valid_moves);
+//
+//        print_valid_moves(valid_moves, 8);
+//        int valid_move = check_move_in_valid_moves(to, valid_moves, 8);
+//
+//        if (valid_move == 1) {
+//
+//            if (squares_of_pieces[to] == NULL) {
+//                squares_of_pieces[to] = squares_of_pieces[from];
+//                squares_of_pieces[from]->move(from, to);
+//                squares_of_pieces[from] = NULL;
+//
+//            }
+//            else {
+//                cout << "Something went wrong with a pointer";
+//            }
+//            cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
+//        }
+//        else {
+//            cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
+////            cout << "For piece at %d can't move to %d, it's not a valid move", from, to);
+//        }
 
-    else {
-        int valid_moves[8];
-        clean_array(valid_moves);
-        squares_of_pieces[from]->return_valid_moves(valid_moves);
-        print_valid_moves(valid_moves, 8);
-        int valid_move = check_move_in_valid_moves(to, valid_moves, 8);
-
-        if (valid_move == 1) {
-
-            if (squares_of_pieces[to] == NULL) {
-                squares_of_pieces[to] = squares_of_pieces[from];
-                squares_of_pieces[from]->move(from, to);
-                squares_of_pieces[from] = NULL;
-
-            }
-            else {
-                cout << "Something went wrong with a pointer";
-            }
-            cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
-        }
-        else {
-            cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
-//            cout << "For piece at %d can't move to %d, it's not a valid move", from, to);
-        }
-
-    }
+//    }
 
 
 

@@ -14,7 +14,7 @@ class Board {
 //    Piece *squares_of_pieces[32];
     int initiate_pieces_array();
     int check_space_empty(int location);
-    void print_valid_moves(int *valid_moves, int size);
+
     int check_move_in_valid_moves(int to, int* valid_moves, int size);
 
 public:
@@ -27,7 +27,7 @@ public:
 
     // move to private later
     Piece *squares_of_pieces[32];
-
+    int whole_move_procedure(int from, int to);
     Board();
 
 };

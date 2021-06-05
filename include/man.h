@@ -19,7 +19,11 @@ public:
 
 //    }
 
-    int * return_valid_moves(int *moves_array);
+//    vector <int> generate_valid_moves();
+    vector <int> generate_moves_proposal();
+
+    //public
+    vector<int> get_valid_moves();
 
     Man(Color color_, int location_);
     ~Man();

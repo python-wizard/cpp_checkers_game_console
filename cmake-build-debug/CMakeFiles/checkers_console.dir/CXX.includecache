@@ -10,16 +10,14 @@
 piece.h
 /home/byun/programowanie/checkers_console/include/piece.h
 
-/home/byun/programowanie/checkers_console/include/man.h
-piece.h
-/home/byun/programowanie/checkers_console/include/piece.h
-
 /home/byun/programowanie/checkers_console/include/other.h
 string.h
 -
 
 /home/byun/programowanie/checkers_console/include/piece.h
 iostream
+-
+vector
 -
 other.h
 /home/byun/programowanie/checkers_console/include/other.h
@@ -33,20 +31,4 @@ string.h
 -
 include/board.h
 /home/byun/programowanie/checkers_console/include/board.h
-
-/home/byun/programowanie/checkers_console/sources/board.cpp
-../include/board.h
-/home/byun/programowanie/checkers_console/include/board.h
-../include/man.h
-/home/byun/programowanie/checkers_console/include/man.h
-iomanip
--
-
-/home/byun/programowanie/checkers_console/sources/man.cpp
-../include/man.h
-/home/byun/programowanie/checkers_console/include/man.h
-
-/home/byun/programowanie/checkers_console/sources/piece.cpp
-../include/piece.h
-/home/byun/programowanie/checkers_console/include/piece.h
 
