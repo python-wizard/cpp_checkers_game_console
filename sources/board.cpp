@@ -22,13 +22,6 @@ int Board::check_space_empty(int location) {
 }
 
 
-
-//int Board::try_move(int from, int to) {
-////    int result = squares_of_pieces[from]->move();
-//}
-
-
-
 int Board::initiate_pieces_array() {
     Man *man_temp_pointer;
     Piece *piece_temp_pointer;
@@ -138,7 +131,6 @@ int Board::whole_move_procedure(int from, int to) {
             }
         }
 
-
         cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
     }
     // check capture
@@ -146,31 +138,6 @@ int Board::whole_move_procedure(int from, int to) {
 
 
 }
-//        print_valid_moves(valid_moves, 8);
-//        int valid_move = check_move_in_valid_moves(to, valid_moves, 8);
-//
-//        if (valid_move == 1) {
-//
-//            if (squares_of_pieces[to] == NULL) {
-//                squares_of_pieces[to] = squares_of_pieces[from];
-//                squares_of_pieces[from]->move(from, to);
-//                squares_of_pieces[from] = NULL;
-//
-//            }
-//            else {
-//                cout << "Something went wrong with a pointer";
-//            }
-//            cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
-//        }
-//        else {
-//            cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
-////            cout << "For piece at %d can't move to %d, it's not a valid move", from, to);
-//        }
-//
-//    }
-//
-//}
-
 
 int Board::check_move_in_valid_moves(int to, int* valid_moves, int size) {
     int i;
@@ -192,42 +159,4 @@ int Board::move_piece(int from, int to) {
         cout << "For piece at %d can't move to %d. The space is not empty. Choose a different square.", from, to;
         return 0;
     }
-//
-//    else {
-//        int valid_moves[8];
-//        clean_array(valid_moves);
-//        return_valid_moves(valid_moves);
-//
-//        print_valid_moves(valid_moves, 8);
-//        int valid_move = check_move_in_valid_moves(to, valid_moves, 8);
-//
-//        if (valid_move == 1) {
-//
-//            if (squares_of_pieces[to] == NULL) {
-//                squares_of_pieces[to] = squares_of_pieces[from];
-//                squares_of_pieces[from]->move(from, to);
-//                squares_of_pieces[from] = NULL;
-//
-//            }
-//            else {
-//                cout << "Something went wrong with a pointer";
-//            }
-//            cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
-//        }
-//        else {
-//            cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
-////            cout << "For piece at %d can't move to %d, it's not a valid move", from, to);
-//        }
-
-//    }
-
-
-
-
-
-//    int distance = calculate_distance(from, to);
-    // calculate distance
-    // check distance
-
-    //move piece - call move on piece
 }

@@ -30,5 +30,4 @@ public:
     ~Man();
 };
 
-
 #endif //CHECKERS_CONSOLE_MAN_H

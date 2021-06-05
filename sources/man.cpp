@@ -1,7 +1,6 @@
 #include <tuple>
 #include "../include/man.h"
 
-
 vector <int> Man::generate_moves_proposal() {
 
     std::vector<int> moves_proposal;
@@ -22,9 +21,6 @@ vector <int> Man::generate_moves_proposal() {
     }
 
     int row_new, col_new, location_new;
-
-
-
 
     if (column != 0) {
         row_new = row + color_offset;
@@ -111,95 +107,6 @@ vector<std::tuple<int, int>> Man::generate_captures_proposal() {
     return tuples_move_capture;
 }
 
-
-//
-//    if (color == black) {
-//        if (row == 7) {
-//            valid_moves[0] = '\0';
-//            valid_moves[1] = '\0';
-//        }
-//        else {
-//            if (row%2 == 0) {
-////            if (column == 0) {
-////                moves_array[0] = location + 5;
-////                moves_array[1] = '\0';
-////            }
-////            else
-//                if (column == 7) {
-//                    valid_moves[0] = location + 4;
-//                    valid_moves[1] = '\0';
-//                }
-//                else {
-//                    valid_moves[0] = location + 4;
-//                    valid_moves[1] = location + 5;
-//                }
-//            }
-//            else {
-//                if (column == 0) {
-//                    valid_moves[0] = location + 4;
-//                    valid_moves[1] = NULL;
-//                }
-////            else if (column == 8) {
-////                moves_array[0] = location + 4;
-////                moves_array[1] = NULL;
-////            }
-//                else {
-//                    valid_moves[0] = location + 3;
-//                    valid_moves[1] = location + 4;
-//                }
-//            }
-//        }
-//
-//    }
-////    return moves_array;
-//}
-
-//int Man::generate_valid_moves() {
-//    int row = calculate_row(location);
-//    int column = calculate_column(location);
-////    int moves_array[2];
-//
-//    if (color == black) {
-//        if (row == 7) {
-//            valid_moves[0] = '\0';
-//            valid_moves[1] = '\0';
-//        }
-//        else {
-//            if (row%2 == 0) {
-////            if (column == 0) {
-////                moves_array[0] = location + 5;
-////                moves_array[1] = '\0';
-////            }
-////            else
-//                if (column == 7) {
-//                    valid_moves[0] = location + 4;
-//                    valid_moves[1] = '\0';
-//                }
-//                else {
-//                    valid_moves[0] = location + 4;
-//                    valid_moves[1] = location + 5;
-//                }
-//            }
-//            else {
-//                if (column == 0) {
-//                    valid_moves[0] = location + 4;
-//                    valid_moves[1] = NULL;
-//                }
-////            else if (column == 8) {
-////                moves_array[0] = location + 4;
-////                moves_array[1] = NULL;
-////            }
-//                else {
-//                    valid_moves[0] = location + 3;
-//                    valid_moves[1] = location + 4;
-//                }
-//            }
-//        }
-//
-//    }
-////    return moves_array;
-//}
-
 vector<int> Man::get_valid_moves() {
     return valid_moves;
 }
@@ -228,23 +135,6 @@ int Man::calculate_distance_rows(int row, int to) {
     return row_destination - row;
 }
 
-
-//int Man::move(int to) {
-//    int row = calculate_row(location);
-//    // calculate distance (raw square numbers)
-//    int distance = calculate_distance(to);
-//
-//
-//    // calculate distance in rows
-//    calculate_distance_rows(row, to);
-//
-//    //check whether adjacent square
-//    calculate_distance_squares(row, distance);
-//
-//    //
-//    return 0;
-//}
-
 Man::Man(Color color_, int location_): Piece(color_, location_) {
 
 }
@@ -263,3 +153,20 @@ char Man::print_itself() {
 Man::~Man() {
 
 };
+
+
+//int Man::move(int to) {
+//    int row = calculate_row(location);
+//    // calculate distance (raw square numbers)
+//    int distance = calculate_distance(to);
+//
+//
+//    // calculate distance in rows
+//    calculate_distance_rows(row, to);
+//
+//    //check whether adjacent square
+//    calculate_distance_squares(row, distance);
+//
+//    //
+//    return 0;
+//}
