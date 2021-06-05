@@ -1,7 +1,6 @@
 #ifndef CHECKERS_CONSOLE_BOARD_H
 #define CHECKERS_CONSOLE_BOARD_H
 
-
 #include "piece.h"
 
 class Board {

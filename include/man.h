@@ -10,11 +10,11 @@ public:
     char print_itself();
 
     // later private
-    int calculate_row(int square);
+
     int calculate_distance_squares(int row, int distance);
     int calculate_distance(int to);
     int calculate_distance_rows(int row, int to);
-    int calculate_column(int square);
+
 //    int[] & return_adjacent_squares(int square) {
 
 //    }

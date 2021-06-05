@@ -8,6 +8,8 @@ using namespace std;
 class Piece {
 protected:
     int location;
+    int loc_row;
+    int loc_col;
     int history[30];
     Color color;
 
@@ -24,6 +26,8 @@ public:
 
     // move to protected later
     virtual int * return_valid_moves(int *moves_array) {};
+    int calculate_row(int square);
+    int calculate_column(int square);
 
 };
 

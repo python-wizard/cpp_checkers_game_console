@@ -24,6 +24,7 @@ int main() {
 
     Board board1;
     board1.print_board();
+    board1.squares_of_pieces[0]->
 
     board1.move_piece(8,12);
 
