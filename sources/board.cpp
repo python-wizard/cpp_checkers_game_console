@@ -56,7 +56,7 @@ void Board::print_board() {
             cout << i/4 << " |";
         }
 
-        if ((j%2) ==1) {
+        if ((j%2) ==0) {
             cout << "     |";
         }
 
@@ -72,7 +72,7 @@ void Board::print_board() {
         }
 
 
-        if ((j%2) == 0) {
+        if ((j%2) == 1) {
             cout << "     |";
         }
         if ((i%4) == 3) {
