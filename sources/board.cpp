@@ -47,29 +47,49 @@ int Board::initiate_pieces_array() {
 }
 
 void Board::print_board() {
+    cout << "     0     1     2     3     4     5     6     7    \n";
+//    cout << "  +-----------------------------------------------+";
+//    cout << "\n";
+//    printf("0 | %c | %c | %c | %c", board->spaces[0][0]->player, board->spaces[1][0]->player,
+//           board->spaces[2][0]->player, board->spaces[3][0]->player);
+//    printf(" | %c | %c | %c | %c |", board->spaces[4][0]->player, board->spaces[5][0]->player,
+//           board->spaces[6][0]->player, board->spaces[7][0]->player);
+//    printf("\n");
+//    printf("  ---------------------------------");
+//    printf("\n");
+
     int i, j=0;
     for (i=0; i<32; i++) {
+        if ((i%4)==0) {
+            cout << "  +-----------------------------------------------+\n";
+            printf("%d |", i/4);
+        }
+
+//        printf("%d | %c | %c | %c | %c", board->spaces[0][0]->player, board->spaces[1][0]->player,
+//               board->spaces[2][0]->player, board->spaces[3][0]->player);
+
         if ((j%2) ==1) {
-            printf("   ");
+            printf("     |");
         }
 
         if (squares_of_pieces[i] == NULL) {
-            printf("%5d", i);
+            printf("%5d|", i);
         }
         else {
             char piece = squares_of_pieces[i]->print_itself();
-            printf("%5c", piece);
+            printf("%5c|", piece);
         }
 
 
         if ((j%2) == 0) {
-            printf("   ");
+            printf("     |");
         }
         if ((i%4) == 3) {
             j++;
             putchar('\n');
         }
     }
+    cout << "  +-----------------------------------------------+\n";
 }
 
 void Board::print_squares() {

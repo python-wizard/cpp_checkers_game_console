@@ -24,16 +24,6 @@ iostream
 other.h
 /home/byun/programowanie/checkers_console/include/other.h
 
-/home/byun/programowanie/checkers_console/main.cpp
-iostream
--
-stdio.h
--
-string.h
--
-include/board.h
-/home/byun/programowanie/checkers_console/include/board.h
-
 /home/byun/programowanie/checkers_console/sources/board.cpp
 ../include/board.h
 /home/byun/programowanie/checkers_console/include/board.h
