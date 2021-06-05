@@ -32,15 +32,15 @@ int main() {
 //    int j;
 //
 //    for (j=0; j<32; j++) {
-//        printf("Square %d :", j);
+//        cout << "Square %d :", j);
 //        board1.squares_of_pieces[j]->return_valid_moves(p);
 //        int i;
 //        int size = sizeof p / sizeof *p;
-////    printf("Sizeof: %d  ", size);
+////    cout << "Sizeof: %d  ", size);
 //
 //        for (i=0; i<size; i++) {
 //            if (p[i] != '\0') {
-//                printf("%d  ", p[i]);
+//                cout << "%d  ", p[i]);
 //            }
 //
 //        }
@@ -48,24 +48,24 @@ int main() {
 //    }
 
 
-//    printf("%d  ", p[0]);
-//    printf("%d  ", p[1]);
+//    cout << "%d  ", p[0]);
+//    cout << "%d  ", p[1]);
 
 
 //
-//    printf("%d", p[i]);
+//    cout << "%d", p[i]);
 //    for
 
 
 //    int i;
 //    for (i=0; i<34; i++) {
 //        int empty = board1.check_space_empty(i);
-//        printf("%d", empty);
+//        cout << "%d", empty);
 ////        putchar('\n');
 //    }
 
 //    int dis = board1.calculate_distance(0, 4);
-//    printf("%d", dis);
+//    cout << "%d", dis);
 
     return 0;
 

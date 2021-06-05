@@ -1,6 +1,6 @@
 #include "../include/board.h"
 #include "../include/man.h"
-
+#include <iomanip>
 
 Board::Board() {
     initiate_pieces_array();
@@ -62,27 +62,30 @@ void Board::print_board() {
     for (i=0; i<32; i++) {
         if ((i%4)==0) {
             cout << "  +-----------------------------------------------+\n";
-            printf("%d |", i/4);
+            cout << i/4 << " |";
         }
 
 //        printf("%d | %c | %c | %c | %c", board->spaces[0][0]->player, board->spaces[1][0]->player,
 //               board->spaces[2][0]->player, board->spaces[3][0]->player);
 
         if ((j%2) ==1) {
-            printf("     |");
+            cout << "     |";
         }
 
         if (squares_of_pieces[i] == NULL) {
-            printf("%5d|", i);
+            cout << setw(4)  << i << " |" ;//    << 1 << endl;
+
+//            cout << format("%1% %2% %|40t|%3%\n") i << "   |"; //"%5d|
         }
         else {
             char piece = squares_of_pieces[i]->print_itself();
-            printf("%5c|", piece);
+            cout << setw(4)  << piece << " |" ;//    << 1 << endl;
+//            cout << piece << "    |"; //"%5c|", );
         }
 
 
         if ((j%2) == 0) {
-            printf("     |");
+            cout << "     |";
         }
         if ((i%4) == 3) {
             j++;
@@ -96,11 +99,12 @@ void Board::print_squares() {
     int i, j=0;
     for (i=0; i<32; i++) {
         if ((j%2) ==1) {
-            printf("   ");
+            cout << "   ";
         }
-        printf("%5d", i);
+//        printf("%5d", i);
+        cout << setw(5) << i;
         if ((j%2) == 0) {
-            printf("   ");
+            cout << "   ";
         }
         if ((i%4) == 3) {
             j++;
@@ -113,7 +117,8 @@ void Board::print_valid_moves(int *valid_moves, int size) {
     int i;
     for (i=0; i<size; i++) {
         if (valid_moves[i] != NULL) {
-            printf("%d ", valid_moves[i]);
+//            printf("%d ", valid_moves[i]);
+            cout << setw(4) << valid_moves[i]; // "%d ", valid_moves[i]);
         }
 
     }
@@ -137,7 +142,7 @@ int Board::move_piece(int from, int to) {
     int empty = check_space_empty(to);
 
     if (empty == 0) {
-        printf("For piece at %d can't move to %d. The space is not empty. Choose a different square.", from, to);
+        cout << "For piece at %d can't move to %d. The space is not empty. Choose a different square.", from, to;
         return 0;
     }
 
@@ -157,12 +162,13 @@ int Board::move_piece(int from, int to) {
 
             }
             else {
-                printf("Something went wrong with a pointer");
+                cout << "Something went wrong with a pointer";
             }
-            printf("Piece from %d successfuly moved to %d.", from, to);
+            cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
         }
         else {
-            printf("For piece at %d can't move to %d, it's not a valid move", from, to);
+            cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
+//            cout << "For piece at %d can't move to %d, it's not a valid move", from, to);
         }
 
     }
