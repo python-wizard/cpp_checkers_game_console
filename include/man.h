@@ -21,6 +21,7 @@ public:
 
 //    vector <int> generate_valid_moves();
     vector <int> generate_moves_proposal();
+    vector<std::tuple<int, int>> generate_captures_proposal();
 
     //public
     vector<int> get_valid_moves();

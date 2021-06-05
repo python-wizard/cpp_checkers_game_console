@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <tuple>
 #include "other.h"
 using namespace std;
 
@@ -35,6 +36,7 @@ public:
     virtual int * return_valid_moves(int *moves_array) {};
     virtual int generate_valid_moves() {};
     virtual vector<int> generate_moves_proposal() {};
+    virtual vector<std::tuple<int, int>> generate_captures_proposal() {};
 
 //    int Man::generate_valid_moves
     int calculate_row(int square);

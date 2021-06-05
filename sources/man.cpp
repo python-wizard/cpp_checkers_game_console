@@ -1,4 +1,6 @@
+#include <tuple>
 #include "../include/man.h"
+
 
 vector <int> Man::generate_moves_proposal() {
 
@@ -44,6 +46,71 @@ vector <int> Man::generate_moves_proposal() {
 
     return moves_proposal;
 }
+
+vector<std::tuple<int, int>> Man::generate_captures_proposal() {
+
+    std::vector<std::tuple<int, int>> tuples_move_capture;
+
+    int row = calculate_row(location);
+    int column = calculate_column(location);
+
+    int color_offset;
+    if (color == black) {
+        if (row >= 7) {
+            cout << "Something's wrong, the pawn is already a King." << endl;
+        }
+
+        color_offset = 1;
+    }
+    else {
+        color_offset = -1;
+    }
+
+    int row_new1, col_new1, location_new1;
+    int row_new2, col_new2, location_new2;
+
+
+    if (column > 1) {
+        row_new1 = row + color_offset;
+        col_new1 = column - 1;
+        location_new1 = calculate_location(row_new1, col_new1);
+
+        row_new2 = row + (color_offset*2);
+        col_new2 = column - 2;
+        location_new2 = calculate_location(row_new2, col_new2);
+
+        //append vector;
+
+        tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+
+    }
+
+    if (column < 6) {
+
+        row_new1 = row + color_offset;
+        col_new1 = column + 1;
+        location_new1 = calculate_location(row_new1, col_new1);
+
+        row_new2 = row + (color_offset*2);
+        col_new2 = column + 2;
+        location_new2 = calculate_location(row_new2, col_new2);
+
+        //append vector;
+
+        tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+
+    }
+
+    for (auto&& tuple: tuples_move_capture)
+    {
+        int X, Y;
+        std::tie(X, Y) = tuple;
+
+        std::cout << X << " " << Y << " " << std::endl;
+    }
+    return tuples_move_capture;
+}
+
 
 //
 //    if (color == black) {

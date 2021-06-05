@@ -141,6 +141,10 @@ int Board::whole_move_procedure(int from, int to) {
 
         cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
     }
+    // check capture
+    std::vector<std::tuple<int, int>> tuples_move_capture;
+
+
 }
 //        print_valid_moves(valid_moves, 8);
 //        int valid_move = check_move_in_valid_moves(to, valid_moves, 8);

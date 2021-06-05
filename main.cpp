@@ -66,6 +66,14 @@ int main() {
     board1.whole_move_procedure(20, 16);
     board1.print_board();
 
+    board1.squares_of_pieces[0]->generate_captures_proposal();
+    board1.squares_of_pieces[1]->generate_captures_proposal();
+    board1.squares_of_pieces[3]->generate_captures_proposal();
+    board1.squares_of_pieces[27]->generate_captures_proposal();
+    board1.squares_of_pieces[28]->generate_captures_proposal();
+    board1.squares_of_pieces[29]->generate_captures_proposal();
+
+
 //    board1.squares_of_pieces[0]->generate_valid_moves();
 //
 //    board1.squares_of_pieces[0]->print_valid_moves();
