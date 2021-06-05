@@ -68,19 +68,3 @@ int Piece::calculate_location(int row, int column) {
     location += column/2;
     return location;
 }
-
-//void Piece::print_valid_moves(int size) {
-//    //
-////    clean_array(valid_moves);
-//    return_valid_moves(valid_moves);
-//
-//
-//
-//    int i;
-//    for (i=0; i<size; i++) {
-//        if (valid_moves[i] != NULL) {
-////            printf("%d ", valid_moves[i]);
-//            cout << setw(4) << valid_moves[i]; // "%d ", valid_moves[i]);
-//        }
-//    }
-//}

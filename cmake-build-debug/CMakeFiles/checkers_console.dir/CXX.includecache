@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/byun/programowanie/checkers_console/include/board.h
+piece.h
+/home/byun/programowanie/checkers_console/include/piece.h
+
 /home/byun/programowanie/checkers_console/include/man.h
 piece.h
 /home/byun/programowanie/checkers_console/include/piece.h
@@ -24,9 +28,23 @@ tuple
 other.h
 /home/byun/programowanie/checkers_console/include/other.h
 
+/home/byun/programowanie/checkers_console/sources/board.cpp
+../include/board.h
+/home/byun/programowanie/checkers_console/include/board.h
+../include/man.h
+/home/byun/programowanie/checkers_console/include/man.h
+iomanip
+-
+
 /home/byun/programowanie/checkers_console/sources/man.cpp
 tuple
 -
 ../include/man.h
 /home/byun/programowanie/checkers_console/include/man.h
+
+/home/byun/programowanie/checkers_console/sources/piece.cpp
+../include/piece.h
+/home/byun/programowanie/checkers_console/include/piece.h
+iomanip
+-
 
