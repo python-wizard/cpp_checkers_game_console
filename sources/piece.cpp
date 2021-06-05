@@ -45,6 +45,10 @@ void Piece::print_valid_moves() {
     std::cout << '\n';
 }
 
+Color Piece::get_color() {
+    return color;
+}
+
 int Piece::calculate_location(int row, int column) {
     int location;
 

@@ -31,6 +31,7 @@ public:
     Piece(Color color_, int location_);
     virtual char print_itself();
     void print_valid_moves();
+    Color get_color();
 
     // move to protected later
     virtual int * return_valid_moves(int *moves_array) {};

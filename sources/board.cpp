@@ -40,6 +40,7 @@ int Board::initiate_pieces_array() {
 }
 
 void Board::print_board() {
+    cout << endl;
     cout << "     0     1     2     3     4     5     6     7    \n";
 
     int i, j=0;
@@ -94,22 +95,28 @@ void Board::print_squares() {
     }
 }
 
-int Board::whole_move_procedure(int from, int to) {
-    int empty = check_space_empty(to);
+int Board::try_move(int from, int to) {
+    int empty_to = check_space_empty(to);
+    int empty_from = check_space_empty(from);
 
-    if (empty == 0) {
+    if (empty_to == 0) {
         cout << "For piece at " << from << " can't move to " << to
              << ". The space is not empty. Choose a different square." << endl;
-        return 0;
-    } else {
+        return -1;
+    }
+    else if (empty_from == 1) {
+        cout << "There is not piece at " << from << " so something that does not exist can't move... :)" << endl;
+        return -1;
+    }
+    else {
         vector<int> moves_proposal;
         vector<int> moves_valid;
         moves_proposal = (squares_of_pieces[from]->generate_moves_proposal());
 
         for (int &move : moves_proposal) {
             std::cout << "valid move maybe: " << move << endl;
-            empty = check_space_empty(move);
-            if (empty == 1) {
+            empty_to = check_space_empty(move);
+            if (empty_to == 1) {
                 moves_valid.push_back(move);
                 std::cout << "valid move : " << move << endl;
             }
@@ -126,16 +133,132 @@ int Board::whole_move_procedure(int from, int to) {
                     cout << "Something went wrong with a pointer";
                 }
 
-                cout << "Piece from " << from << " successfuly moved to " << to << "."; //  %d.", from, to);
+                cout << "Piece from " << from << " successfuly moved to " << to << "." << endl; //  %d.", from, to);
                 return 1;
             }
         }
 
         cout << "For piece at " << from << " can't move to " << to << ", it's not a valid move.";
     }
-    // check capture
-    std::vector<std::tuple<int, int>> tuples_move_capture;
+    return 0;
+}
 
+int Board::try_capture(int from, int to) {
+    int empty_a, empty_b;
+    int right_target = 0;
+    int non_empty_a = 0;
+    vector<std::tuple<int, int>> capture_proposal;
+    vector<std::tuple<int, int>> captures_valid;
+
+    if (squares_of_pieces[from] != NULL) {
+        capture_proposal = squares_of_pieces[from]->generate_captures_proposal();
+    }
+    else {
+        cout << "These is somthing wrong with the pointer. There is no pointer at this place of the squares_of_pieces array." << endl;
+        return -1;
+    }
+
+//    vector<int> captures_valid;
+
+    for (auto&& tuple: capture_proposal) {
+
+        int a, b;
+        std::tie(a, b) = tuple;
+        std::cout << a << " " << b << " " << std::endl;
+
+        empty_a = check_space_empty(a);
+        empty_b = check_space_empty(b);
+
+        if (b==to) {
+            right_target = 1;
+        }
+
+        if (empty_a == 0 && empty_b == 1) {
+            Color color_from, color_through;
+            color_through = squares_of_pieces[a]->get_color();
+            color_from = squares_of_pieces[from]->get_color();
+
+            string str_color_trough;
+            string str_color_from;
+
+            if (color_through== black) {
+                str_color_trough = "black";
+            }
+            else {
+                str_color_trough = "white";
+            }
+
+            if (color_from == black) {
+                str_color_from = "black";
+            }
+            else {
+                str_color_from = "white";
+            }
+
+            if (color_through != color_from) {
+                //            captures_valid.push_back(b);
+                captures_valid.push_back(std::make_tuple(a, b));
+
+                //            tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+                cout << "valid capture from (" << str_color_from << ") : " << from << " to: (" << str_color_trough << ") " << b << endl;
+
+            }
+            else {
+                cout << "Trying to remove one's own piece... :)"<< endl;
+            }
+
+        }
+        else {
+            cout << "captures from " << from << "not a valid capture " << " to: " << b << "   a_empty: " << empty_a << "   b_empty" << empty_b << endl;
+            cout << "You capture by jumping one square over enemy's piece, meaning you move two squares." << endl;
+        }
+    }
+
+    for (auto&& tuple: captures_valid) {
+        int a, b;
+        std::tie(a, b) = tuple;
+
+        if (b == to) {
+            if (squares_of_pieces[b] == NULL && squares_of_pieces[a] != NULL) {
+                squares_of_pieces[to] = squares_of_pieces[from];
+                squares_of_pieces[from]->move(from, to);
+                squares_of_pieces[from] = NULL;
+
+                //deleting
+                delete squares_of_pieces[a];
+                squares_of_pieces[a] = NULL;
+
+            } else {
+                cout << "Something went wrong with a pointer";
+            }
+
+            cout << "Piece from " << from << " successfuly moved to " << to << ". ";
+            cout << "And captured at square " << a << " which was removed from the board.";//  %d.", from, to);
+            return 1;
+        }
+    }
+
+    if (right_target==0) {
+        cout << "You cannot move capture from " << from << " to " << to << " Wrong target.";
+    }
+
+    return 0;
+}
+
+int Board::whole_move_procedure(int from, int to) {
+    int moved = try_move(from, to);
+
+    if (moved == 1) {
+        return 1;
+    }
+    else if (moved == -1) {
+        // something went wrong
+        return -1;
+    }
+
+    // check capture
+    int captured = try_capture(from, to);
+    return captured;
 
 }
 

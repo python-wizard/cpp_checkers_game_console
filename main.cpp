@@ -24,54 +24,94 @@ int main() {
 
     Board board1;
     board1.print_board();
-    int row = board1.squares_of_pieces[0]->calculate_row(0);
-    cout << "row: " << row;
+//    int row = board1.squares_of_pieces[0]->calculate_row(0);
+//    cout << "row: " << row;
+//
+//    int loc = board1.squares_of_pieces[0]->calculate_location(0, 0);
+//    cout << "loc 0 0: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(0, 1);
+//    cout << "loc 0 1: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(0, 3);
+//    cout << "loc 0 3: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(0, 5);
+//    cout << "loc 0 5: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(0, 7);
+//    cout << "loc 0 7: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(1, 0);
+//    cout << "loc 1 0: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(2, 1);
+//    cout << "loc 2 1: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(7, 7);
+//    cout << "loc 7 7: " << loc;
+//
+//    loc = board1.squares_of_pieces[0]->calculate_location(7, 6);
+//    cout << "loc 7 6: " << loc;
 
-    int loc = board1.squares_of_pieces[0]->calculate_location(0, 0);
-    cout << "loc 0 0: " << loc;
+//    board1.whole_move_procedure(0, 4);
+//    board1.print_board();
+//
+//    board1.whole_move_procedure(8, 12);
+//    board1.print_board();
+//
+//    board1.whole_move_procedure(12, 16);
+//    board1.print_board();
+//
+//    board1.whole_move_procedure(20, 16);
+//    board1.print_board();
 
-    loc = board1.squares_of_pieces[0]->calculate_location(0, 1);
-    cout << "loc 0 1: " << loc;
+//    board1.squares_of_pieces[0]->generate_captures_proposal();
+//    board1.squares_of_pieces[1]->generate_captures_proposal();
+//    board1.squares_of_pieces[3]->generate_captures_proposal();
+//    board1.squares_of_pieces[27]->generate_captures_proposal();
+//    board1.squares_of_pieces[28]->generate_captures_proposal();
+//    board1.squares_of_pieces[29]->generate_captures_proposal();
 
-    loc = board1.squares_of_pieces[0]->calculate_location(0, 3);
-    cout << "loc 0 3: " << loc;
 
-    loc = board1.squares_of_pieces[0]->calculate_location(0, 5);
-    cout << "loc 0 5: " << loc;
+    board1.whole_move_procedure(8, 13);
+//    board1.print_board();
+//
+    board1.whole_move_procedure(13, 17);
+//    board1.print_board();
 
-    loc = board1.squares_of_pieces[0]->calculate_location(0, 7);
-    cout << "loc 0 7: " << loc;
-
-    loc = board1.squares_of_pieces[0]->calculate_location(1, 0);
-    cout << "loc 1 0: " << loc;
-
-    loc = board1.squares_of_pieces[0]->calculate_location(2, 1);
-    cout << "loc 2 1: " << loc;
-
-    loc = board1.squares_of_pieces[0]->calculate_location(7, 7);
-    cout << "loc 7 7: " << loc;
-
-    loc = board1.squares_of_pieces[0]->calculate_location(7, 6);
-    cout << "loc 7 6: " << loc;
-
-    board1.whole_move_procedure(0, 4);
-    board1.print_board();
-
+    board1.whole_move_procedure(4, 8);
+//    board1.print_board();
+//
     board1.whole_move_procedure(8, 12);
-    board1.print_board();
 
-    board1.whole_move_procedure(12, 16);
-    board1.print_board();
+    board1.whole_move_procedure(9, 13);
+    board1.whole_move_procedure(13, 16);
+//    board1.print_board();
 
-    board1.whole_move_procedure(20, 16);
-    board1.print_board();
+    board1.whole_move_procedure(23, 19);
+//    board1.print_board();
+//
+    board1.whole_move_procedure(19, 15);
 
-    board1.squares_of_pieces[0]->generate_captures_proposal();
-    board1.squares_of_pieces[1]->generate_captures_proposal();
-    board1.squares_of_pieces[3]->generate_captures_proposal();
-    board1.squares_of_pieces[27]->generate_captures_proposal();
-    board1.squares_of_pieces[28]->generate_captures_proposal();
-    board1.squares_of_pieces[29]->generate_captures_proposal();
+    board1.print_board();
+//    board1.print_board();
+
+
+    board1.try_capture(21, 12);
+    board1.print_board();
+//
+//    board1.try_capture(0, 9);
+////    board1.print_board();
+//
+//    board1.try_capture(5, 12);
+//
+//
+//    board1.try_capture(29, 24);
+//
+//
+//    board1.try_capture(21, 14);
+
 
 
 //    board1.squares_of_pieces[0]->generate_valid_moves();
