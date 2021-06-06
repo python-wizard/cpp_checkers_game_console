@@ -83,6 +83,9 @@
 		<Unit filename="/home/byun/programowanie/checkers_console/include/board.h">
 			<Option target="checkers_console"/>
 		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/include/game.h">
+			<Option target="checkers_console"/>
+		</Unit>
 		<Unit filename="/home/byun/programowanie/checkers_console/include/king.h">
 			<Option target="checkers_console"/>
 		</Unit>
@@ -99,6 +102,9 @@
 			<Option target="checkers_console"/>
 		</Unit>
 		<Unit filename="/home/byun/programowanie/checkers_console/sources/board.cpp">
+			<Option target="checkers_console"/>
+		</Unit>
+		<Unit filename="/home/byun/programowanie/checkers_console/sources/game.cpp">
 			<Option target="checkers_console"/>
 		</Unit>
 		<Unit filename="/home/byun/programowanie/checkers_console/sources/king.cpp">

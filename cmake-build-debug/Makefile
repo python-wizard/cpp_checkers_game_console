@@ -196,6 +196,33 @@ sources/board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/board.cpp.s
 .PHONY : sources/board.cpp.s
 
+sources/game.o: sources/game.cpp.o
+
+.PHONY : sources/game.o
+
+# target to build an object file
+sources/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/game.cpp.o
+.PHONY : sources/game.cpp.o
+
+sources/game.i: sources/game.cpp.i
+
+.PHONY : sources/game.i
+
+# target to preprocess a source file
+sources/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/game.cpp.i
+.PHONY : sources/game.cpp.i
+
+sources/game.s: sources/game.cpp.s
+
+.PHONY : sources/game.s
+
+# target to generate assembly for a file
+sources/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers_console.dir/build.make CMakeFiles/checkers_console.dir/sources/game.cpp.s
+.PHONY : sources/game.cpp.s
+
 sources/king.o: sources/king.cpp.o
 
 .PHONY : sources/king.o
@@ -319,6 +346,9 @@ help:
 	@echo "... sources/board.o"
 	@echo "... sources/board.i"
 	@echo "... sources/board.s"
+	@echo "... sources/game.o"
+	@echo "... sources/game.i"
+	@echo "... sources/game.s"
 	@echo "... sources/king.o"
 	@echo "... sources/king.i"
 	@echo "... sources/king.s"

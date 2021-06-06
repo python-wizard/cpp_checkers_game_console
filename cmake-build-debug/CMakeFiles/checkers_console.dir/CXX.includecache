@@ -10,6 +10,14 @@
 piece.h
 /home/byun/programowanie/checkers_console/include/piece.h
 
+/home/byun/programowanie/checkers_console/include/game.h
+other.h
+/home/byun/programowanie/checkers_console/include/other.h
+../include/board.h
+/home/byun/programowanie/checkers_console/include/board.h
+fstream
+-
+
 /home/byun/programowanie/checkers_console/include/other.h
 string.h
 -
@@ -24,13 +32,7 @@ tuple
 other.h
 /home/byun/programowanie/checkers_console/include/other.h
 
-/home/byun/programowanie/checkers_console/main.cpp
-iostream
--
-stdio.h
--
-string.h
--
-include/board.h
-/home/byun/programowanie/checkers_console/include/board.h
+/home/byun/programowanie/checkers_console/sources/game.cpp
+../include/game.h
+/home/byun/programowanie/checkers_console/include/game.h
 

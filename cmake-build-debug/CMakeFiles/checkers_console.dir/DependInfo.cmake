@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/byun/programowanie/checkers_console/main.cpp" "/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/checkers_console.dir/main.cpp.o"
   "/home/byun/programowanie/checkers_console/sources/board.cpp" "/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/checkers_console.dir/sources/board.cpp.o"
+  "/home/byun/programowanie/checkers_console/sources/game.cpp" "/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/checkers_console.dir/sources/game.cpp.o"
   "/home/byun/programowanie/checkers_console/sources/king.cpp" "/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/checkers_console.dir/sources/king.cpp.o"
   "/home/byun/programowanie/checkers_console/sources/man.cpp" "/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/checkers_console.dir/sources/man.cpp.o"
   "/home/byun/programowanie/checkers_console/sources/other.cpp" "/home/byun/programowanie/checkers_console/cmake-build-debug/CMakeFiles/checkers_console.dir/sources/other.cpp.o"
