@@ -15,7 +15,7 @@ int Game::check_game_ended() {
 }
 
 
-std::tuple<string, vector<int>, vector<int>> Game::load_game() { //string filename string,
+std::tuple<string, vector<int>, vector<int>, vector<int>, vector<int>> Game::load_from_file() { //string filename string,
 //    string line;
     string filename = "filename.txt";
 
@@ -34,58 +34,83 @@ std::tuple<string, vector<int>, vector<int>> Game::load_game() { //string filena
         lines.push_back(line);
     }
 
-//    for (const auto &i : lines)
-//        cout << i << endl;
-
 
     myfile.close();
 
     string str_turn_color, str_black_pieces, str_white_pieces;
-    str_turn_color = lines[0];
-    str_black_pieces = lines[1];
-    str_white_pieces = lines[2];
-
-    cout << str_turn_color << endl;
-    cout << str_black_pieces << endl;
-    cout << str_white_pieces << endl;
-
-//    for (int &piece : piece) {
-//        myfile << piece << ' ';
-//    }
-
-
     vector<int> black_pieces, white_pieces;
+    if (lines.size() >= 3) {
+        str_turn_color = lines[0];
+        str_black_pieces = lines[1];
+        str_white_pieces = lines[2];
 
-    stringstream ss_black(str_black_pieces);
+        cout << str_turn_color << endl;
+        cout << str_black_pieces << endl;
+        cout << str_white_pieces << endl;
 
-    int hlp;
-    while(ss_black >> hlp)
-    {
-        black_pieces.push_back(hlp);
+        stringstream ss_black(str_black_pieces);
+
+        int hlp;
+        while(ss_black >> hlp)
+        {
+            black_pieces.push_back(hlp);
+        }
+
+        stringstream ss_white(str_white_pieces);
+        int hlp2;
+        while(ss_white >> hlp2)
+        {
+            white_pieces.push_back(hlp2);
+        }
+
+        cout << "Black pieces";
+
+        for(auto i: black_pieces)
+            cout << i;
+
+        cout << endl;
+
+        cout << "White pieces";
+
+        for(auto i: white_pieces)
+            cout << i;
+
+        cout << endl;
+    }
+    else {
+        cout << "The file needs to have at least 3 lines. 1 - color; 2 - black pieces; 3 white pieces." << endl;
     }
 
-    stringstream ss_white(str_white_pieces);
-    int hlp2;
-    while(ss_white >> hlp2)
-    {
-        white_pieces.push_back(hlp2);
+    vector<int> black_kings, white_kings;
+    string str_black_kings, str_white_kings;
+
+
+    if (lines.size() >= 4) {
+
+        str_black_kings = lines[4];
+
+        stringstream ss_black(str_black_kings);
+        int hlp;
+        while(ss_black >> hlp)
+        {
+            black_kings.push_back(hlp);
+        }
     }
 
-    cout << "Black pieces";
+    if (lines.size() >= 5) {
 
-    for(auto i: black_pieces)
-        cout << i;
+        str_white_kings = lines[5];
 
-    cout << endl;
+        stringstream ss_black(str_white_kings);
+        int hlp;
+        while(ss_black >> hlp)
+        {
+            white_kings.push_back(hlp);
+        }
+    }
 
-    cout << "White pieces";
-
-    for(auto i: white_pieces)
-        cout << i;
-
-    cout << endl;
 //    return black_pieces;
-    return std::make_tuple(str_turn_color, black_pieces, white_pieces); //str_turn_color,
+    return std::make_tuple(str_turn_color, black_pieces, white_pieces, black_kings, white_kings); //str_turn_color,
 }
 
 int Game::save_game() { //string filename

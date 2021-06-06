@@ -22,7 +22,7 @@ public:
 
 //    int load_game(string filename);
 //    int save_game(string filename);
-    std::tuple<string, vector<int>, vector<int>> load_game(); //str_turn_color,
+    std::tuple<string, vector<int>, vector<int>, vector<int>, vector<int>> load_from_file(); //str_turn_color,
 //    std::tuple<vector<int>, vector<int>> load_game(); //str_turn_color,
 //    int load_game();
     int save_game();
