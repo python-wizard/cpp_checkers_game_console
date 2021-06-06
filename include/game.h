@@ -3,6 +3,7 @@
 #include "other.h"
 #include "../include/board.h"
 #include <fstream>
+#include <sstream>
 
 class Game {
     Color turn = black;
@@ -21,7 +22,9 @@ public:
 
 //    int load_game(string filename);
 //    int save_game(string filename);
-    int load_game();
+    std::tuple<string, vector<int>, vector<int>> load_game(); //str_turn_color,
+//    std::tuple<vector<int>, vector<int>> load_game(); //str_turn_color,
+//    int load_game();
     int save_game();
 };
 

@@ -15,19 +15,77 @@ int Game::check_game_ended() {
 }
 
 
-int Game::load_game() { //string filename
-    string line;
-    ifstream myfile ("example.txt");
-    if (myfile.is_open())
-    {
-        while ( getline (myfile,line, ' ') )
-        {
-            cout << line << '\n';
-        }
-        myfile.close();
+std::tuple<string, vector<int>, vector<int>> Game::load_game() { //string filename string,
+//    string line;
+    string filename = "filename.txt";
+
+
+    ifstream myfile("example.txt");
+    if (!myfile.is_open()) {
+        cerr << "Could not open the file - '"
+             << filename << "'" << endl;
+//        return EXIT_FAILURE;
     }
 
-    else cout << "Unable to open file";
+    vector<string> lines;
+    string line;
+
+    while (getline(myfile, line)) {
+        lines.push_back(line);
+    }
+
+//    for (const auto &i : lines)
+//        cout << i << endl;
+
+
+    myfile.close();
+
+    string str_turn_color, str_black_pieces, str_white_pieces;
+    str_turn_color = lines[0];
+    str_black_pieces = lines[1];
+    str_white_pieces = lines[2];
+
+    cout << str_turn_color << endl;
+    cout << str_black_pieces << endl;
+    cout << str_white_pieces << endl;
+
+//    for (int &piece : piece) {
+//        myfile << piece << ' ';
+//    }
+
+
+    vector<int> black_pieces, white_pieces;
+
+    stringstream ss_black(str_black_pieces);
+
+    int hlp;
+    while(ss_black >> hlp)
+    {
+        black_pieces.push_back(hlp);
+    }
+
+    stringstream ss_white(str_white_pieces);
+    int hlp2;
+    while(ss_white >> hlp2)
+    {
+        white_pieces.push_back(hlp2);
+    }
+
+    cout << "Black pieces";
+
+    for(auto i: black_pieces)
+        cout << i;
+
+    cout << endl;
+
+    cout << "White pieces";
+
+    for(auto i: white_pieces)
+        cout << i;
+
+    cout << endl;
+//    return black_pieces;
+    return std::make_tuple(str_turn_color, black_pieces, white_pieces); //str_turn_color,
 }
 
 int Game::save_game() { //string filename
