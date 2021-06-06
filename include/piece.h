@@ -36,8 +36,10 @@ public:
     // move to protected later
     virtual int * return_valid_moves(int *moves_array) {};
     virtual int generate_valid_moves() {};
-    virtual vector<int> generate_moves_proposal() {};
-    virtual vector<std::tuple<int, int>> generate_captures_proposal() {};
+    virtual vector<int> generate_possible_moves() {
+        return vector <int> {};
+    };
+    virtual vector<std::tuple<int, int>> generate_possible_captures() {};
 
 //    int Man::generate_valid_moves
     int calculate_row(int square);

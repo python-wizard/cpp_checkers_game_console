@@ -50,6 +50,9 @@ int main() {
     board2.whole_move_procedure(8, 1);
     board2.print_board();
 
+    board2.whole_move_procedure(1, 6);
+    board2.print_board();
+
 //    int row = board1.squares_of_pieces[0]->calculate_row(0);
 //    cout << "row: " << row;
 //

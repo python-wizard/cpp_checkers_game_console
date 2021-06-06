@@ -20,8 +20,8 @@ public:
 //    }
 
 //    vector <int> generate_valid_moves();
-//    vector <int> generate_moves_proposal();
-//    vector<std::tuple<int, int>> generate_captures_proposal();
+    vector <int> generate_possible_moves();
+    vector<std::tuple<int, int>> generate_possible_captures();
 
     //public
 //    vector<int> get_valid_moves();

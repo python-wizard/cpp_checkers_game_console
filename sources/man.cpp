@@ -1,7 +1,7 @@
 #include <tuple>
 #include "../include/man.h"
 
-vector <int> Man::generate_moves_proposal() {
+vector <int> Man::generate_possible_moves() {
 
     std::vector<int> moves_proposal;
 
@@ -43,7 +43,7 @@ vector <int> Man::generate_moves_proposal() {
     return moves_proposal;
 }
 
-vector<std::tuple<int, int>> Man::generate_captures_proposal() {
+vector<std::tuple<int, int>> Man::generate_possible_captures() {
 
     std::vector<std::tuple<int, int>> tuples_move_capture;
 

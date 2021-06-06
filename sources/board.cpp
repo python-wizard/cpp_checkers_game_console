@@ -152,7 +152,7 @@ int Board::try_move(int from, int to) {
     else {
         vector<int> moves_proposal;
         vector<int> moves_valid;
-        moves_proposal = (squares_of_pieces[from]->generate_moves_proposal());
+        moves_proposal = (squares_of_pieces[from]->generate_possible_moves());
 
         for (int &move : moves_proposal) {
             std::cout << "valid move maybe: " << move << endl;
@@ -192,7 +192,7 @@ int Board::try_capture(int from, int to) {
     vector<std::tuple<int, int>> captures_valid;
 
     if (squares_of_pieces[from] != NULL) {
-        capture_proposal = squares_of_pieces[from]->generate_captures_proposal();
+        capture_proposal = squares_of_pieces[from]->generate_possible_captures();
     }
     else {
         cout << "These is somthing wrong with the pointer. There is no pointer at this place of the squares_of_pieces array." << endl;
