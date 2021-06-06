@@ -31,11 +31,37 @@ int Game::load_game() { //string filename
 }
 
 int Game::save_game() { //string filename
+    std::tuple<vector<int>, vector<int>> tuple_vectors_pieces;
+
+    tuple_vectors_pieces = game_board->return_locations_pieces_board();
+
+    vector<int> black_pieces, white_pieces;
+    std::tie(black_pieces, white_pieces) = tuple_vectors_pieces;
 
     ofstream myfile;
     myfile.open ("example.txt");
-    myfile << "Writing this to a file.\n";
-    myfile << "Writing this to a file.\n";
+
+    string str_turn;
+    if (turn == black) {
+        str_turn = "black";
+    }
+    else if (turn == white) {
+        str_turn = "white";
+    }
+    myfile << str_turn << endl;
+
+    for (int &piece : black_pieces) {
+        myfile << piece << ' ';
+    }
+    myfile << endl;
+
+    for (int &piece : white_pieces) {
+        myfile << piece << ' ';
+    }
+    myfile << endl;
+
+//    myfile << "Writing this to a file.\n";
+//    myfile << "Writing this to a file.\n";
     myfile.close();
     return 0;
 

@@ -40,6 +40,10 @@ public:
 
     int man_to_king_promotion(int location);
 
+    std::tuple<vector<int>, vector<int>> return_locations_pieces_board();
+//    vector<std::tuple<int, int>>
+
+
     // private proper
     Board();
     Board(vector <int> vector_black, vector <int> vector_white,

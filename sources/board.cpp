@@ -388,6 +388,28 @@ int Board::check_player_has_no_pieces() {
     return 0;
 }
 
+std::tuple<vector<int>, vector<int>> Board::return_locations_pieces_board() {
+    vector<int> black_pieces;
+    vector<int> white_pieces;
+
+    Color temp_color;
+
+    int i;
+    for (i=0; i<32; i++) {
+        if (squares_of_pieces[i] != NULL) {
+            temp_color = squares_of_pieces[i]->get_color();
+
+            if (temp_color == black) {
+                black_pieces.push_back(i);
+            }
+            else if (temp_color == white) {
+                white_pieces.push_back(i);
+            }
+        }
+    }
+    return make_tuple(black_pieces, white_pieces);
+}
+
 //int Board::move_piece(int from, int to) {
 //    int empty = check_space_empty(to);
 //

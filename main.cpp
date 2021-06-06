@@ -18,7 +18,7 @@ int main() {
 
     Game game1;
     game1.save_game();
-    game1.load_game();
+//    game1.load_game();
 
     return 0;
 
