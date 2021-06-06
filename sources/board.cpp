@@ -1,6 +1,9 @@
 #include "../include/board.h"
 #include "../include/man.h"
+#include "../include//king.h"
 #include <iomanip>
+
+#define VERBOSE
 
 Board::Board() {
     initiate_pieces_array();
@@ -98,7 +101,7 @@ void Board::print_board() {
 //            cout << format("%1% %2% %|40t|%3%\n") i << "   |"; //"%5d|
         }
         else {
-            char piece = squares_of_pieces[i]->print_itself();
+            char piece = squares_of_pieces[i]->return_descriptive_char();
             cout << setw(4)  << piece << " |" ;//    << 1 << endl;
 //            cout << piece << "    |"; //"%5c|", );
         }
@@ -287,6 +290,7 @@ int Board::whole_move_procedure(int from, int to) {
     int moved = try_move(from, to);
 
     if (moved == 1) {
+        man_to_king_promotion(to);
         return 1;
     }
     else if (moved == -1) {
@@ -296,8 +300,10 @@ int Board::whole_move_procedure(int from, int to) {
 
     // check capture
     int captured = try_capture(from, to);
+    if (captured==1) {
+        man_to_king_promotion(to);
+    }
     return captured;
-
 }
 
 int Board::check_move_in_valid_moves(int to, int* valid_moves, int size) {
@@ -313,11 +319,50 @@ int Board::check_move_in_valid_moves(int to, int* valid_moves, int size) {
     return destination_in_valid_moves;
 }
 
-int Board::move_piece(int from, int to) {
-    int empty = check_space_empty(to);
-
-    if (empty == 0) {
-        cout << "For piece at %d can't move to %d. The space is not empty. Choose a different square.", from, to;
-        return 0;
-    }
+int Board::promotion(int location, Color color, string str_color) {
+    delete squares_of_pieces[location];
+    squares_of_pieces[location] = NULL;
+    squares_of_pieces[location] = new King(color, location);
+    cout << "Promoted (" << str_color << ") at location: " << location << endl;
 }
+
+int Board::man_to_king_promotion(int location) {
+    int empty = check_space_empty(location);
+    if (empty==0) {
+        Color color = squares_of_pieces[location]->get_color();
+        string str_color;
+        if (color == black) {
+            str_color = "black";
+        }
+        else {
+            str_color = "white";
+        }
+
+        int row = squares_of_pieces[location]->calculate_row(location);
+
+        if (color == black && row == 7) {
+            promotion(location, color, str_color);
+        }
+        else if (color == white && row == 0) {
+            promotion(location, color, str_color);
+        }
+        else {
+#ifdef VERBOSE
+            cout << "Not a row to promote : " << location << endl;
+#endif
+        }
+    }
+    else {
+        cout << "Can't promote at: " << location << ". You can't promote something that isn't there." << endl;
+    }
+
+}
+
+//int Board::move_piece(int from, int to) {
+//    int empty = check_space_empty(to);
+//
+//    if (empty == 0) {
+//        cout << "For piece at %d can't move to %d. The space is not empty. Choose a different square.", from, to;
+//        return 0;
+//    }
+//}

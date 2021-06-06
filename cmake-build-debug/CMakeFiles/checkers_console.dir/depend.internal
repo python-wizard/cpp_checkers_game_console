@@ -8,12 +8,15 @@ CMakeFiles/checkers_console.dir/main.cpp.o
  /home/byun/programowanie/checkers_console/main.cpp
 CMakeFiles/checkers_console.dir/sources/board.cpp.o
  /home/byun/programowanie/checkers_console/include/board.h
+ /home/byun/programowanie/checkers_console/include/king.h
  /home/byun/programowanie/checkers_console/include/man.h
  /home/byun/programowanie/checkers_console/include/other.h
  /home/byun/programowanie/checkers_console/include/piece.h
  /home/byun/programowanie/checkers_console/sources/board.cpp
 CMakeFiles/checkers_console.dir/sources/king.cpp.o
  /home/byun/programowanie/checkers_console/include/king.h
+ /home/byun/programowanie/checkers_console/include/other.h
+ /home/byun/programowanie/checkers_console/include/piece.h
  /home/byun/programowanie/checkers_console/sources/king.cpp
 CMakeFiles/checkers_console.dir/sources/man.cpp.o
  /home/byun/programowanie/checkers_console/include/man.h

@@ -7,12 +7,15 @@ CMakeFiles/checkers_console.dir/main.cpp.o: ../include/piece.h
 CMakeFiles/checkers_console.dir/main.cpp.o: ../main.cpp
 
 CMakeFiles/checkers_console.dir/sources/board.cpp.o: ../include/board.h
+CMakeFiles/checkers_console.dir/sources/board.cpp.o: ../include/king.h
 CMakeFiles/checkers_console.dir/sources/board.cpp.o: ../include/man.h
 CMakeFiles/checkers_console.dir/sources/board.cpp.o: ../include/other.h
 CMakeFiles/checkers_console.dir/sources/board.cpp.o: ../include/piece.h
 CMakeFiles/checkers_console.dir/sources/board.cpp.o: ../sources/board.cpp
 
 CMakeFiles/checkers_console.dir/sources/king.cpp.o: ../include/king.h
+CMakeFiles/checkers_console.dir/sources/king.cpp.o: ../include/other.h
+CMakeFiles/checkers_console.dir/sources/king.cpp.o: ../include/piece.h
 CMakeFiles/checkers_console.dir/sources/king.cpp.o: ../sources/king.cpp
 
 CMakeFiles/checkers_console.dir/sources/man.cpp.o: ../include/man.h

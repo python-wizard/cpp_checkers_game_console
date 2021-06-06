@@ -15,7 +15,7 @@ int Piece::move(int from, int to) {
     return 0;
 }
 
-char Piece::print_itself() {
+char Piece::return_descriptive_char() {
     return 'p';
     cout << "printing piece";
 };

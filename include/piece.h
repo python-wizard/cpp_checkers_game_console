@@ -29,7 +29,7 @@ protected:
 public:
     int move(int from, int to);
     Piece(Color color_, int location_);
-    virtual char print_itself();
+    virtual char return_descriptive_char();
     void print_valid_moves();
     Color get_color();
 

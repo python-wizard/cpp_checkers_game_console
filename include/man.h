@@ -7,7 +7,7 @@ class Man: public Piece {
 public:
     int move(int to);
 
-    char print_itself();
+    char return_descriptive_char();
 
     // later private
 

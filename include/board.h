@@ -16,12 +16,12 @@ class Board {
     int check_space_empty(int location);
 
     int check_move_in_valid_moves(int to, int* valid_moves, int size);
-
+    int promotion(int location, Color color, string str_color);
 
 public:
     void print_board();
     void print_squares();
-    int move_piece(int from, int to);
+//    int move_piece(int from, int to);
 //    int calculate_distance(int from, int to);
 //    int try_move(int from, int to);
 
@@ -35,6 +35,7 @@ public:
     int initiate_pieces_from_vector(vector <int> vector_black, vector <int> vector_white,
                                     vector<int> vector_black_king = {}, vector<int> vector_white_king = {});
 
+    int man_to_king_promotion(int location);
 
     // private proper
     Board();

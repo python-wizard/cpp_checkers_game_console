@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
+#define VERBOSE
 //using namespace std;
 //#include <stdlib.h>
 
@@ -31,6 +32,22 @@ int main() {
     vector <int> man_black_king = {};
     vector <int> man_white_king = {};
     Board board2(man_black, man_white); //, man_black_king, man_white_king
+    board2.print_board();
+
+    board2.man_to_king_promotion(8);
+    board2.man_to_king_promotion(10);
+    board2.man_to_king_promotion(28);
+
+    board2.print_board();
+
+    board2.whole_move_procedure(26, 31);
+    board2.whole_move_procedure(4, 0);
+    board2.whole_move_procedure(9, 14);
+    board2.print_board();
+
+    board2.whole_move_procedure(8, 13);
+    board2.whole_move_procedure(12, 8);
+    board2.whole_move_procedure(8, 1);
     board2.print_board();
 
 //    int row = board1.squares_of_pieces[0]->calculate_row(0);

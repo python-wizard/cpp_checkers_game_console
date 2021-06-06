@@ -139,7 +139,7 @@ Man::Man(Color color_, int location_): Piece(color_, location_) {
 
 }
 
-char Man::print_itself() {
+char Man::return_descriptive_char() {
     if (color == black) {
 //        putchar('b');
         return 'b';
