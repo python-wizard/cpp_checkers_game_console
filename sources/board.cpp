@@ -358,6 +358,36 @@ int Board::man_to_king_promotion(int location) {
 
 }
 
+int Board::check_player_has_no_pieces() {
+    int i;
+    int pieces_black = 0, pieces_white = 0;
+
+    for (i=0; i<32; i++) {
+        if (squares_of_pieces[i] != NULL) {
+            Color c = squares_of_pieces[i]->get_color();
+            if (c==black)
+                pieces_black++;
+            else
+                pieces_white++;
+        }
+    }
+    if (pieces_black == 0) {
+        game_ended = 1;
+        winner = white;
+        cout << "White won." << endl;
+        return 1;
+
+    }
+    else if (pieces_white == 0) {
+        game_ended = 1;
+        winner = black;
+        cout << "Black won." << endl;
+        return -1;
+    }
+    cout << "Game's on." << endl;
+    return 0;
+}
+
 //int Board::move_piece(int from, int to) {
 //    int empty = check_space_empty(to);
 //

@@ -6,6 +6,8 @@
 class Board {
 //    char squares[31];
     int size = 8;
+    int game_ended = 0;
+    Color winner;
 
 //    typedef Piece* AntPtr;
 //    AntPtr * ants = new AntPtr[num_ants];
@@ -31,6 +33,7 @@ public:
     int whole_move_procedure(int from, int to);
     int try_capture(int from, int to);
     int try_move(int from, int to);
+    int check_player_has_no_pieces();
 
     int initiate_pieces_from_vector(vector <int> vector_black, vector <int> vector_white,
                                     vector<int> vector_black_king = {}, vector<int> vector_white_king = {});

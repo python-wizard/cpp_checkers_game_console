@@ -71,6 +71,38 @@ int main() {
     board2.whole_move_procedure(10, 1);
     board2.print_board();
 
+    board2.check_player_has_no_pieces();
+
+    board2.whole_move_procedure(30, 25);
+    board2.whole_move_procedure(25, 22);
+    board2.whole_move_procedure(22, 17);
+//    board2.whole_move_procedure(17, 8);
+//
+//
+//    board2.whole_move_procedure(1, 5);
+//    board2.whole_move_procedure(8, 1);
+
+//    board2.whole_move_procedure(10, 1);
+
+    board2.whole_move_procedure(30, 25);
+    board2.whole_move_procedure(25, 22);
+    board2.whole_move_procedure(22, 17);
+
+    board2.whole_move_procedure(17, 21);
+    board2.whole_move_procedure(21, 16);
+    board2.whole_move_procedure(28, 24);
+
+
+
+    board2.print_board();
+    board2.check_player_has_no_pieces();
+
+    board2.whole_move_procedure(13, 20);
+    board2.whole_move_procedure(20, 29);
+
+    board2.print_board();
+    board2.check_player_has_no_pieces();
+
 //    int row = board1.squares_of_pieces[0]->calculate_row(0);
 //    cout << "row: " << row;
 //
