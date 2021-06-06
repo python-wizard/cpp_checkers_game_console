@@ -53,6 +53,24 @@ int main() {
     board2.whole_move_procedure(1, 6);
     board2.print_board();
 
+    board2.whole_move_procedure(31, 26);
+    board2.whole_move_procedure(0, 5);
+    board2.whole_move_procedure(13, 9);
+    board2.print_board();
+
+    board2.whole_move_procedure(5, 9);
+    board2.whole_move_procedure(9, 18);
+    board2.whole_move_procedure(18, 22);
+    board2.whole_move_procedure(22, 25);
+    board2.whole_move_procedure(25, 30);
+
+    board2.whole_move_procedure(26, 23);
+    board2.whole_move_procedure(23, 19);
+    board2.whole_move_procedure(19, 15);
+    board2.whole_move_procedure(15, 10);
+    board2.whole_move_procedure(10, 1);
+    board2.print_board();
+
 //    int row = board1.squares_of_pieces[0]->calculate_row(0);
 //    cout << "row: " << row;
 //

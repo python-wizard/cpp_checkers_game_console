@@ -4,7 +4,7 @@
 #include "piece.h"
 
 class Board {
-    char squares[31];
+//    char squares[31];
     int size = 8;
 
 //    typedef Piece* AntPtr;

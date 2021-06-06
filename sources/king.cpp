@@ -43,7 +43,7 @@ vector <int> King::generate_possible_moves() {
         }
     }
 
-    else if (row > 0 && row <= 7) {
+    if (row > 0 && row <= 7) {
         if (column > 0) {
             row_new = row - 1;
             col_new = column - 1;
@@ -72,51 +72,78 @@ vector<std::tuple<int, int>> King::generate_possible_captures() {
     int row = calculate_row(location);
     int column = calculate_column(location);
 
-    int color_offset;
-    if (color == black) {
-        if (row >= 7) {
-            cout << "Something's wrong, the pawn is already a King." << endl;
-        }
-
-        color_offset = 1;
-    }
-    else {
-        color_offset = -1;
-    }
+//    int color_offset;
+//    if (color == black) {
+//        if (row >= 7) {
+//            cout << "Something's wrong, the pawn is already a King." << endl;
+//        }
+//
+//        color_offset = 1;
+//    }
+//    else {
+//        color_offset = -1;
+//    }
 
     int row_new1, col_new1, location_new1;
     int row_new2, col_new2, location_new2;
 
 
-    if (column > 1) {
-        row_new1 = row + color_offset;
-        col_new1 = column - 1;
-        location_new1 = calculate_location(row_new1, col_new1);
+    if (column > 1 && column <=7) {
+        if (row <6 && row >=0) {
+            row_new1 = row + 1;
+            col_new1 = column - 1;
+            location_new1 = calculate_location(row_new1, col_new1);
 
-        row_new2 = row + (color_offset*2);
-        col_new2 = column - 2;
-        location_new2 = calculate_location(row_new2, col_new2);
+            row_new2 = row + 2;
+            col_new2 = column - 2;
+            location_new2 = calculate_location(row_new2, col_new2);
 
-        //append vector;
+            //append vector;
 
-        tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+            tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+        }
+        if (row > 1 && row <=7) {
+            row_new1 = row - 1;
+            col_new1 = column - 1;
+            location_new1 = calculate_location(row_new1, col_new1);
 
+            row_new2 = row - 2;
+            col_new2 = column - 2;
+            location_new2 = calculate_location(row_new2, col_new2);
+
+            //append vector;
+
+            tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+        }
     }
 
-    if (column < 6) {
+    if (column < 6 && column >= 0) {
+        if (row <6 && row >=0) {
+            row_new1 = row + 1;
+            col_new1 = column + 1;
+            location_new1 = calculate_location(row_new1, col_new1);
 
-        row_new1 = row + color_offset;
-        col_new1 = column + 1;
-        location_new1 = calculate_location(row_new1, col_new1);
+            row_new2 = row + 2;
+            col_new2 = column + 2;
+            location_new2 = calculate_location(row_new2, col_new2);
 
-        row_new2 = row + (color_offset*2);
-        col_new2 = column + 2;
-        location_new2 = calculate_location(row_new2, col_new2);
+            //append vector;
 
-        //append vector;
+            tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+        }
+        if (row > 1 && row <=7) {
+            row_new1 = row - 1;
+            col_new1 = column + 1;
+            location_new1 = calculate_location(row_new1, col_new1);
 
-        tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+            row_new2 = row - 2;
+            col_new2 = column + 2;
+            location_new2 = calculate_location(row_new2, col_new2);
 
+            //append vector;
+
+            tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
+        }
     }
 
     for (auto&& tuple: tuples_move_capture)
