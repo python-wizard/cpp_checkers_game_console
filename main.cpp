@@ -22,8 +22,17 @@ using namespace std;
 int main() {
 //    std::cout << "Hello, World!" << std::endl;
 
-    Board board1;
-    board1.print_board();
+//    Board board1;
+//    board1.print_board();
+
+    // custom board with less pieces
+    vector <int> man_black = {8, 5, 9, 26};
+    vector <int> man_white = {28, 12, 4};
+    vector <int> man_black_king = {};
+    vector <int> man_white_king = {};
+    Board board2(man_black, man_white); //, man_black_king, man_white_king
+    board2.print_board();
+
 //    int row = board1.squares_of_pieces[0]->calculate_row(0);
 //    cout << "row: " << row;
 //
@@ -73,33 +82,33 @@ int main() {
 //    board1.squares_of_pieces[28]->generate_captures_proposal();
 //    board1.squares_of_pieces[29]->generate_captures_proposal();
 
-
-    board1.whole_move_procedure(8, 13);
-//    board1.print_board();
 //
-    board1.whole_move_procedure(13, 17);
-//    board1.print_board();
-
-    board1.whole_move_procedure(4, 8);
-//    board1.print_board();
+//    board1.whole_move_procedure(8, 13);
+////    board1.print_board();
+////
+//    board1.whole_move_procedure(13, 17);
+////    board1.print_board();
 //
-    board1.whole_move_procedure(8, 12);
-
-    board1.whole_move_procedure(9, 13);
-    board1.whole_move_procedure(13, 16);
-//    board1.print_board();
-
-    board1.whole_move_procedure(23, 19);
-//    board1.print_board();
+//    board1.whole_move_procedure(4, 8);
+////    board1.print_board();
+////
+//    board1.whole_move_procedure(8, 12);
 //
-    board1.whole_move_procedure(19, 15);
-
-    board1.print_board();
+//    board1.whole_move_procedure(9, 13);
+//    board1.whole_move_procedure(13, 16);
+////    board1.print_board();
+//
+//    board1.whole_move_procedure(23, 19);
+////    board1.print_board();
+////
+//    board1.whole_move_procedure(19, 15);
+//
 //    board1.print_board();
-
-
-    board1.try_capture(21, 12);
-    board1.print_board();
+////    board1.print_board();
+//
+//
+//    board1.try_capture(21, 12);
+//    board1.print_board();
 //
 //    board1.try_capture(0, 9);
 ////    board1.print_board();

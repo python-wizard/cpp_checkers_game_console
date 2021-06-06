@@ -6,6 +6,11 @@ Board::Board() {
     initiate_pieces_array();
 }
 
+Board::Board(vector <int> vector_black, vector <int> vector_white,
+             vector<int> vector_black_king, vector<int> vector_white_king) {
+    initiate_pieces_from_vector(vector_black, vector_white, vector_black_king, vector_white_king);
+}
+
 int Board::check_space_empty(int location) {
     if (location < 0 || location > 31) {
         cout << "Wrong space number.";
@@ -17,6 +22,39 @@ int Board::check_space_empty(int location) {
         }
         else {
             return 0;
+        }
+    }
+}
+
+int Board::initiate_pieces_from_vector(vector <int> vector_black, vector <int> vector_white,
+                                       vector<int> vector_black_king, vector<int> vector_white_king) {
+    Man *man_temp_pointer;
+    Piece *piece_temp_pointer;
+
+    // initiate pointers in the squares_of_pieces array to NULL
+    int i;
+    for (i=0; i<32; i++) {
+        squares_of_pieces[i] = NULL;
+    }
+
+    //initiate black
+    for (int &man : vector_black) {
+        if (squares_of_pieces[man] == NULL) {
+            squares_of_pieces[man] = new Man(black, man);
+            cout << "Initiated black man at: " << man << endl;
+        }
+        else {
+            cout << man << " at squares_of_pieces array is not empty." << endl;
+        }
+    }
+
+    for (int &man : vector_white) {
+        if (squares_of_pieces[man] == NULL) {
+            squares_of_pieces[man] = new Man(white, man);
+            cout << "Initiated white man at: " << man << endl;
+        }
+        else {
+            cout << man << " at squares_of_pieces array is not empty." << endl;
         }
     }
 }

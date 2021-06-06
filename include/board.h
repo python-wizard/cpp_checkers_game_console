@@ -31,8 +31,15 @@ public:
     int whole_move_procedure(int from, int to);
     int try_capture(int from, int to);
     int try_move(int from, int to);
-    Board();
 
+    int initiate_pieces_from_vector(vector <int> vector_black, vector <int> vector_white,
+                                    vector<int> vector_black_king = {}, vector<int> vector_white_king = {});
+
+
+    // private proper
+    Board();
+    Board(vector <int> vector_black, vector <int> vector_white,
+          vector<int> vector_black_king = {}, vector<int> vector_white_king = {});
 
 };
 
