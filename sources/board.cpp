@@ -3,8 +3,10 @@
 #include "../include//king.h"
 #include <iomanip>
 
-#define VERBOSE
+//#define VERBOSE
 
+
+// defalult constructor
 Board::Board() {
     initiate_pieces_array();
 }
@@ -44,7 +46,9 @@ int Board::initiate_pieces_from_vector(vector <int> vector_black, vector <int> v
     for (int &man : vector_black) {
         if (squares_of_pieces[man] == NULL) {
             squares_of_pieces[man] = new Man(black, man);
+#ifdef VERBOSE
             cout << "Initiated black man at: " << man << endl;
+#endif
         }
         else {
             cout << man << " at squares_of_pieces array is not empty." << endl;
@@ -54,7 +58,9 @@ int Board::initiate_pieces_from_vector(vector <int> vector_black, vector <int> v
     for (int &man : vector_white) {
         if (squares_of_pieces[man] == NULL) {
             squares_of_pieces[man] = new Man(white, man);
+#ifdef VERBOSE
             cout << "Initiated white man at: " << man << endl;
+#endif
         }
         else {
             cout << man << " at squares_of_pieces array is not empty." << endl;
@@ -79,16 +85,15 @@ int Board::initiate_pieces_array() {
         squares_of_pieces[i] = new Man(white, i);
     }
 }
-
 void Board::print_board() {
     cout << endl;
-    cout << "     0     1     2     3     4     5     6     7    \n";
+    cout << "               0     1     2     3     4     5     6     7    \n";
 
     int i, j=0;
     for (i=0; i<32; i++) {
         if ((i%4)==0) {
-            cout << "  +-----------------------------------------------+\n";
-            cout << i/4 << " |";
+            cout << "            +-----------------------------------------------+\n";
+            cout << "          " << i/4 << " |";
         }
 
         if ((j%2) ==0) {
@@ -96,13 +101,13 @@ void Board::print_board() {
         }
 
         if (squares_of_pieces[i] == NULL) {
-            cout << setw(4)  << i << " |" ;//    << 1 << endl;
+            cout << "" <<  setw(2)  << i << "   |" ;//    << 1 << endl;
 
 //            cout << format("%1% %2% %|40t|%3%\n") i << "   |"; //"%5d|
         }
         else {
             char piece = squares_of_pieces[i]->return_descriptive_char();
-            cout << setw(4)  << piece << " |" ;//    << 1 << endl;
+            cout << setw(2) << i << setw(2)  << piece << " |" ;//    << 1 << endl;
 //            cout << piece << "    |"; //"%5c|", );
         }
 
@@ -115,8 +120,47 @@ void Board::print_board() {
             putchar('\n');
         }
     }
-    cout << "  +-----------------------------------------------+\n";
+    cout << "            +-----------------------------------------------+\n";
 }
+
+//
+//void Board::print_board() {
+//    cout << endl;
+//    cout << "     0     1     2     3     4     5     6     7    \n";
+//
+//    int i, j=0;
+//    for (i=0; i<32; i++) {
+//        if ((i%4)==0) {
+//            cout << "  +-----------------------------------------------+\n";
+//            cout << i/4 << " |";
+//        }
+//
+//        if ((j%2) ==0) {
+//            cout << "     |";
+//        }
+//
+//        if (squares_of_pieces[i] == NULL) {
+//            cout << setw(4)  << i << " |" ;//    << 1 << endl;
+//
+////            cout << format("%1% %2% %|40t|%3%\n") i << "   |"; //"%5d|
+//        }
+//        else {
+//            char piece = squares_of_pieces[i]->return_descriptive_char();
+//            cout << setw(4)  << piece << " |" ;//    << 1 << endl;
+////            cout << piece << "    |"; //"%5c|", );
+//        }
+//
+//
+//        if ((j%2) == 1) {
+//            cout << "     |";
+//        }
+//        if ((i%4) == 3) {
+//            j++;
+//            putchar('\n');
+//        }
+//    }
+//    cout << "  +-----------------------------------------------+\n";
+//}
 
 void Board::print_squares() {
     int i, j=0;
@@ -155,11 +199,11 @@ int Board::try_move(int from, int to) {
         moves_proposal = (squares_of_pieces[from]->generate_possible_moves());
 
         for (int &move : moves_proposal) {
-            std::cout << "valid move maybe: " << move << endl;
+//            std::cout << "valid move maybe: " << move << endl;
             empty_to = check_space_empty(move);
             if (empty_to == 1) {
                 moves_valid.push_back(move);
-                std::cout << "valid move : " << move << endl;
+//                std::cout << "valid move : " << move << endl;
             }
         }
         std::cout << '\n';
@@ -205,7 +249,7 @@ int Board::try_capture(int from, int to) {
 
         int a, b;
         std::tie(a, b) = tuple;
-        std::cout << a << " " << b << " " << std::endl;
+//        std::cout << a << " " << b << " " << std::endl;
 
         empty_a = check_space_empty(a);
         empty_b = check_space_empty(b);
@@ -241,7 +285,7 @@ int Board::try_capture(int from, int to) {
                 captures_valid.push_back(std::make_tuple(a, b));
 
                 //            tuples_move_capture.push_back(std::make_tuple(location_new1, location_new2));
-                cout << "valid capture from (" << str_color_from << ") : " << from << " to: (" << str_color_trough << ") " << b << endl;
+//                cout << "Valid capture from (" << str_color_from << ") : " << from << " to: (" << str_color_trough << ") " << b << endl;
 
             }
             else {
@@ -250,8 +294,8 @@ int Board::try_capture(int from, int to) {
 
         }
         else {
-            cout << "captures from " << from << "not a valid capture " << " to: " << b << "   a_empty: " << empty_a << "   b_empty" << empty_b << endl;
-            cout << "You capture by jumping one square over enemy's piece, meaning you move two squares." << endl;
+//            cout << "captures from " << from << "not a valid capture " << " to: " << b << "   a_empty: " << empty_a << "   b_empty" << empty_b << endl;
+//            cout << "You capture by jumping one square over enemy's piece, meaning you move two squares." << endl;
         }
     }
 
@@ -280,13 +324,32 @@ int Board::try_capture(int from, int to) {
     }
 
     if (right_target==0) {
-        cout << "You cannot move capture from " << from << " to " << to << " Wrong target.";
+        cout << "You cannot move capture from " << from << " to " << to << " Wrong target." << endl;
     }
 
     return 0;
 }
 
-int Board::whole_move_procedure(int from, int to) {
+int Board::whole_move_procedure(int from, int to, Color turn) {
+
+    if (squares_of_pieces[from] != NULL) {
+        if (squares_of_pieces[from]->get_color() != turn) {
+            string str_color_from;
+            string str_color_turn;
+            if (turn == black) {
+                str_color_turn = "black";
+                str_color_from = "white";
+            }
+            else {
+                str_color_turn = "white";
+                str_color_from = "black";
+            }
+            cout << "It's " << str_color_turn << " move and " << str_color_from << " was trying to move." << endl;
+            return -1;
+        }
+
+    }
+
     int moved = try_move(from, to);
 
     if (moved == 1) {

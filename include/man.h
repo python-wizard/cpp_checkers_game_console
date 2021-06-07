@@ -4,6 +4,8 @@
 #include "piece.h"
 
 class Man: public Piece {
+//    char sign_black = b;
+//    char sign_white = w;
 public:
     int move(int to);
 

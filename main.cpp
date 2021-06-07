@@ -8,6 +8,8 @@
 //#include "include/piece.h"
 #include "include/board.h"
 #include "include/game.h"
+#include "include/man.h"
+#include "include/king.h"
 
 
 using namespace std;
@@ -16,9 +18,10 @@ using namespace std;
 
 int main() {
 
-    Game game1;
-    game1.save_game();
-    game1.load_from_file();
+    Game game2;
+    game2.control_panel();
+
+
 
     return 0;
 

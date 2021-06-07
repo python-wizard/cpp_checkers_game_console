@@ -97,13 +97,13 @@ vector<std::tuple<int, int>> Man::generate_possible_captures() {
 
     }
 
-    for (auto&& tuple: tuples_move_capture)
-    {
-        int X, Y;
-        std::tie(X, Y) = tuple;
-
-        std::cout << X << " " << Y << " " << std::endl;
-    }
+//    for (auto&& tuple: tuples_move_capture)
+//    {
+//        int X, Y;
+//        std::tie(X, Y) = tuple;
+//
+//        std::cout << X << " " << Y << " " << std::endl;
+//    }
     return tuples_move_capture;
 }
 

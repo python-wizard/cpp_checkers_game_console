@@ -3,6 +3,8 @@
 
 CMakeFiles/checkers_console.dir/main.cpp.o: ../include/board.h
 CMakeFiles/checkers_console.dir/main.cpp.o: ../include/game.h
+CMakeFiles/checkers_console.dir/main.cpp.o: ../include/king.h
+CMakeFiles/checkers_console.dir/main.cpp.o: ../include/man.h
 CMakeFiles/checkers_console.dir/main.cpp.o: ../include/other.h
 CMakeFiles/checkers_console.dir/main.cpp.o: ../include/piece.h
 CMakeFiles/checkers_console.dir/main.cpp.o: ../main.cpp

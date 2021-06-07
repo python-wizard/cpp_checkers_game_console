@@ -32,6 +32,7 @@ public:
     virtual char return_descriptive_char();
     void print_valid_moves();
     Color get_color();
+    int get_location();
 
     // move to protected later
     virtual int * return_valid_moves(int *moves_array) {};

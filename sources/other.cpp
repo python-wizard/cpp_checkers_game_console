@@ -1,6 +1,5 @@
-
-
 #include "../include/other.h"
+
 void clean_array(int *array) {
     int i;
     for (i=0; i<10; i++) {
@@ -8,6 +7,13 @@ void clean_array(int *array) {
         memset(array, 0, size);
     }
 }
+void ClearScreen()
+{
+    int n;
+    for (n = 0; n < 10; n++)
+        cout << "\n\n\n\n\n\n\n\n\n\n";
+}
+
 
 
 //void clean_array(char *array) {

@@ -72,3 +72,7 @@ int Piece::calculate_location(int row, int column) {
     location += column/2;
     return location;
 }
+
+int Piece::get_location() {
+    return location;
+}
