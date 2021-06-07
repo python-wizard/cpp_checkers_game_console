@@ -1,6 +1,30 @@
 #include <tuple>
 #include "../include/man.h"
 
+
+// default constructor
+Man::Man(Color color_, int location_): Piece(color_, location_) {
+
+}
+
+// return letter describing piece to be used by print_board() function
+char Man::return_descriptive_char() {
+    if (color == black) {
+//        putchar('b');
+        return 'b';
+    }
+    else if (color == white) {
+//        putchar('w');
+        return 'w';
+    }
+}
+
+// default destructor
+Man::~Man() {
+
+};
+
+// function responsible for returning all legal moves - not captures
 vector <int> Man::generate_possible_moves() {
 
     std::vector<int> moves_proposal;
@@ -43,6 +67,7 @@ vector <int> Man::generate_possible_moves() {
     return moves_proposal;
 }
 
+// function responsible for returning all legal captures
 vector<std::tuple<int, int>> Man::generate_possible_captures() {
 
     std::vector<std::tuple<int, int>> tuples_move_capture;
@@ -97,76 +122,7 @@ vector<std::tuple<int, int>> Man::generate_possible_captures() {
 
     }
 
-//    for (auto&& tuple: tuples_move_capture)
-//    {
-//        int X, Y;
-//        std::tie(X, Y) = tuple;
-//
-//        std::cout << X << " " << Y << " " << std::endl;
-//    }
     return tuples_move_capture;
 }
 
-vector<int> Man::get_valid_moves() {
-    return valid_moves;
-}
 
-int Man::calculate_distance(int to) {
-    return location - to;
-}
-
-
-int Man::calculate_distance_squares(int row, int distance) {
-    int short_jump;
-    int long_jump;
-
-    // black move direction
-    if (distance > 0) {
-
-    }
-
-    if (row%2 == 0) {
-
-    }
-}
-
-int Man::calculate_distance_rows(int row, int to) {
-    int row_destination = calculate_row(to);
-    return row_destination - row;
-}
-
-Man::Man(Color color_, int location_): Piece(color_, location_) {
-
-}
-
-char Man::return_descriptive_char() {
-    if (color == black) {
-//        putchar('b');
-        return 'b';
-    }
-    else if (color == white) {
-//        putchar('w');
-        return 'w';
-    }
-}
-
-Man::~Man() {
-
-};
-
-
-//int Man::move(int to) {
-//    int row = calculate_row(location);
-//    // calculate distance (raw square numbers)
-//    int distance = calculate_distance(to);
-//
-//
-//    // calculate distance in rows
-//    calculate_distance_rows(row, to);
-//
-//    //check whether adjacent square
-//    calculate_distance_squares(row, distance);
-//
-//    //
-//    return 0;
-//}

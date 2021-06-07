@@ -19,7 +19,7 @@ using namespace std;
 int main() {
 
     Game game2;
-    game2.control_panel();
+//    game2.control_panel();
 
 
 

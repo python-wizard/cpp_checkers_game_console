@@ -1,9 +1,11 @@
 #include "../include/king.h"
 
+// default constructor
 King::King(Color color_, int location_): Piece(color_, location_) {
 
 }
 
+// return letter describing piece to be used by print_board() function
 char King::return_descriptive_char() {
     if (color == black) {
 //        putchar('b');
@@ -15,8 +17,10 @@ char King::return_descriptive_char() {
     }
 }
 
+// default destructor
 King::~King() = default;;
 
+// function responsible for returning all legal moves - not captures
 vector <int> King::generate_possible_moves() {
 
     std::vector<int> moves_proposal;
@@ -60,29 +64,16 @@ vector <int> King::generate_possible_moves() {
             moves_proposal.push_back(location_new);
         }
     }
-
-
     return moves_proposal;
 }
 
+// function responsible for returning all legal captures
 vector<std::tuple<int, int>> King::generate_possible_captures() {
 
     std::vector<std::tuple<int, int>> tuples_move_capture;
 
     int row = calculate_row(location);
     int column = calculate_column(location);
-
-//    int color_offset;
-//    if (color == black) {
-//        if (row >= 7) {
-//            cout << "Something's wrong, the pawn is already a King." << endl;
-//        }
-//
-//        color_offset = 1;
-//    }
-//    else {
-//        color_offset = -1;
-//    }
 
     int row_new1, col_new1, location_new1;
     int row_new2, col_new2, location_new2;

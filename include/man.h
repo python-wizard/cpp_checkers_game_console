@@ -4,30 +4,19 @@
 #include "piece.h"
 
 class Man: public Piece {
-//    char sign_black = b;
-//    char sign_white = w;
+
 public:
-    int move(int to);
+
 
     char return_descriptive_char();
 
-    // later private
 
-    int calculate_distance_squares(int row, int distance);
-    int calculate_distance(int to);
-    int calculate_distance_rows(int row, int to);
 
-//    int[] & return_adjacent_squares(int square) {
-
-//    }
-
-//    vector <int> generate_valid_moves();
     vector <int> generate_possible_moves();
     vector<std::tuple<int, int>> generate_possible_captures();
 
-    //public
-    vector<int> get_valid_moves();
 
+    // konstruktory
     Man(Color color_, int location_);
     ~Man();
 };

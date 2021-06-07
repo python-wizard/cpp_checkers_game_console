@@ -11,11 +11,13 @@ Board::Board() {
     initiate_pieces_array();
 }
 
+// constructor taking vectors of locations of pieces, mainly for loading from file
 Board::Board(vector <int> vector_black, vector <int> vector_white,
              vector<int> vector_black_king, vector<int> vector_white_king) {
     initiate_pieces_from_vector(vector_black, vector_white, vector_black_king, vector_white_king);
 }
 
+// function used to check whether given space is empty
 int Board::check_space_empty(int location) {
     if (location < 0 || location > 31) {
         cout << "Wrong space number.";
@@ -31,6 +33,7 @@ int Board::check_space_empty(int location) {
     }
 }
 
+// function used by the constructor to iniate the object from vectors
 int Board::initiate_pieces_from_vector(vector <int> vector_black, vector <int> vector_white,
                                        vector<int> vector_black_king, vector<int> vector_white_king) {
     Man *man_temp_pointer;
@@ -68,7 +71,7 @@ int Board::initiate_pieces_from_vector(vector <int> vector_black, vector <int> v
     }
 }
 
-
+// function used by the constructor to initialize default game
 int Board::initiate_pieces_array() {
     Man *man_temp_pointer;
     Piece *piece_temp_pointer;
@@ -85,6 +88,8 @@ int Board::initiate_pieces_array() {
         squares_of_pieces[i] = new Man(white, i);
     }
 }
+
+//function used to print the board
 void Board::print_board() {
     cout << endl;
     cout << "               0     1     2     3     4     5     6     7    \n";
@@ -120,48 +125,10 @@ void Board::print_board() {
             putchar('\n');
         }
     }
-    cout << "            +-----------------------------------------------+\n";
+    cout << "            +-----------------------------------------------+\n\n\n";
 }
 
-//
-//void Board::print_board() {
-//    cout << endl;
-//    cout << "     0     1     2     3     4     5     6     7    \n";
-//
-//    int i, j=0;
-//    for (i=0; i<32; i++) {
-//        if ((i%4)==0) {
-//            cout << "  +-----------------------------------------------+\n";
-//            cout << i/4 << " |";
-//        }
-//
-//        if ((j%2) ==0) {
-//            cout << "     |";
-//        }
-//
-//        if (squares_of_pieces[i] == NULL) {
-//            cout << setw(4)  << i << " |" ;//    << 1 << endl;
-//
-////            cout << format("%1% %2% %|40t|%3%\n") i << "   |"; //"%5d|
-//        }
-//        else {
-//            char piece = squares_of_pieces[i]->return_descriptive_char();
-//            cout << setw(4)  << piece << " |" ;//    << 1 << endl;
-////            cout << piece << "    |"; //"%5c|", );
-//        }
-//
-//
-//        if ((j%2) == 1) {
-//            cout << "     |";
-//        }
-//        if ((i%4) == 3) {
-//            j++;
-//            putchar('\n');
-//        }
-//    }
-//    cout << "  +-----------------------------------------------+\n";
-//}
-
+// older version of printing function
 void Board::print_squares() {
     int i, j=0;
     for (i=0; i<32; i++) {
@@ -180,6 +147,7 @@ void Board::print_squares() {
     }
 }
 
+// one of the functions responsible for making a move
 int Board::try_move(int from, int to) {
     int empty_to = check_space_empty(to);
     int empty_from = check_space_empty(from);
@@ -228,6 +196,7 @@ int Board::try_move(int from, int to) {
     return 0;
 }
 
+// one of the functions responsible for checking whether capture is valid
 int Board::try_capture(int from, int to) {
     int empty_a, empty_b;
     int right_target = 0;
@@ -330,6 +299,7 @@ int Board::try_capture(int from, int to) {
     return 0;
 }
 
+// function incorporating almost all move functions
 int Board::whole_move_procedure(int from, int to, Color turn) {
 
     if (squares_of_pieces[from] != NULL) {
@@ -369,6 +339,7 @@ int Board::whole_move_procedure(int from, int to, Color turn) {
     return captured;
 }
 
+// function checks whether a move proposed by player is found within possible moves
 int Board::check_move_in_valid_moves(int to, int* valid_moves, int size) {
     int i;
     int destination_in_valid_moves = 0;
@@ -382,6 +353,7 @@ int Board::check_move_in_valid_moves(int to, int* valid_moves, int size) {
     return destination_in_valid_moves;
 }
 
+// function promoting a man to king
 int Board::promotion(int location, Color color, string str_color) {
     delete squares_of_pieces[location];
     squares_of_pieces[location] = NULL;
@@ -389,6 +361,7 @@ int Board::promotion(int location, Color color, string str_color) {
     cout << "Promoted (" << str_color << ") at location: " << location << endl;
 }
 
+// outer function promoting man to king
 int Board::man_to_king_promotion(int location) {
     int empty = check_space_empty(location);
     if (empty==0) {
@@ -421,6 +394,7 @@ int Board::man_to_king_promotion(int location) {
 
 }
 
+// function checking whether player has any pieces left, used to check whether the game has ended
 int Board::check_player_has_no_pieces() {
     int i;
     int pieces_black = 0, pieces_white = 0;
@@ -451,6 +425,7 @@ int Board::check_player_has_no_pieces() {
     return 0;
 }
 
+// returns locations off all the pieces in a tuple of two vectors
 std::tuple<vector<int>, vector<int>> Board::return_locations_pieces_board() {
     vector<int> black_pieces;
     vector<int> white_pieces;
@@ -472,12 +447,3 @@ std::tuple<vector<int>, vector<int>> Board::return_locations_pieces_board() {
     }
     return make_tuple(black_pieces, white_pieces);
 }
-
-//int Board::move_piece(int from, int to) {
-//    int empty = check_space_empty(to);
-//
-//    if (empty == 0) {
-//        cout << "For piece at %d can't move to %d. The space is not empty. Choose a different square.", from, to;
-//        return 0;
-//    }
-//}

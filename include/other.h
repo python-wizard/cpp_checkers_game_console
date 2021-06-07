@@ -1,5 +1,3 @@
-
-
 #ifndef CHECKERS_CONSOLE_OTHER_H
 #define CHECKERS_CONSOLE_OTHER_H
 #include <string.h>

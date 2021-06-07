@@ -1,21 +1,22 @@
 #include "../include/game.h"
 
+// default constructor
 Game::Game() {
-
-
+    control_panel();
 }
 
+// initializing game with the default starting board using default constructor of Board
 int Game::start_normal_game() {
     game_board = new Board;
     game_board->print_board();
 }
 
-int Game::check_game_ended() {
+//int Game::check_game_ended() {
+//
+//}
 
-}
-
-
-std::tuple<string, vector<int>, vector<int>, vector<int>, vector<int>> Game::load_from_file(string filename) { //string filename string,
+// function used to load from file, returns a tuple of vecors object, which is later passed to the Board constructor
+std::tuple<string, vector<int>, vector<int>, vector<int>, vector<int>> Game:: load_from_file(string filename) { //string filename string,
 //    string line;
 //    string filename = "filename.txt";
 
@@ -33,7 +34,6 @@ std::tuple<string, vector<int>, vector<int>, vector<int>, vector<int>> Game::loa
     while (getline(myfile, line)) {
         lines.push_back(line);
     }
-
 
     myfile.close();
 
@@ -116,17 +116,14 @@ std::tuple<string, vector<int>, vector<int>, vector<int>, vector<int>> Game::loa
     return std::make_tuple(str_turn_color, black_pieces, white_pieces, black_kings, white_kings); //str_turn_color,
 }
 
+
+// wrapper function to load the game, uses load_from_file() function
 int Game::load_game(string filename) {
     string str_color;
     vector<int> black_men, white_men, black_kings, white_kings;
 
     tuple<string, vector<int>, vector<int>, vector<int>, vector<int>> super_tuple;
     super_tuple = load_from_file(filename);
-
-
-//
-//    Board(vector <int> vector_black, vector <int> vector_white,
-//            vector<int> vector_black_king = {}, vector<int> vector_white_king = {});
 
     tie(str_color, black_men, white_men, black_kings, white_kings) = super_tuple;
 
@@ -178,12 +175,16 @@ int Game::load_game(string filename) {
 
     cout << "Loading game from: " << filename << " ." << endl;
 
-
+//    if (game_board != NULL) {
+//        delete game_board;
+//        game_board == NULL;
+//    }
     game_board = new Board(black_men, white_men, black_kings, white_kings);
     game_board->print_board();
 
 }
 
+// function used to save the game to file
 int Game::save_game(string filename) { //string filename
     std::tuple<vector<int>, vector<int>> tuple_vectors_pieces;
 
@@ -214,12 +215,11 @@ int Game::save_game(string filename) { //string filename
     }
     myfile << endl;
 
-//    myfile << "Writing this to a file.\n";
-//    myfile << "Writing this to a file.\n";
     myfile.close();
     return 0;
 }
 
+// function used to print the logo of checkers
 void Game::print_logo() {
 
     string filename = "../logo2.txt";
@@ -240,6 +240,7 @@ void Game::print_logo() {
 
 }
 
+// function used to print the main menu screen
 void Game::print_menu_main_screen() {
     cout << "\n\n\n\n";
     cout << "Welcome to the wonderful game of Checkers. What do you want to do?" << endl;
@@ -248,6 +249,7 @@ void Game::print_menu_main_screen() {
     cout << "4. Exit the program." << endl;
 }
 
+// basically main function that controls the interface with the user. Can be called by the constructor.
 int Game::control_panel() {
     int exit = 0;
     while (exit != 1) {
@@ -260,21 +262,20 @@ int Game::control_panel() {
 
         if (choice == 1) {
             start_normal_game();
-            control_game(exit);
+            control_game();
         }
         else if (choice == 2) {
             string filename;
             cout << "What is the name of the file that you want to save the game to :    ";
             cin >> filename;
             load_game(filename);
-            control_game(exit);
+            control_game();
         }
         if (choice == 4) {
             exit = 1;
             return 0;
         }
     }
-
 }
 
     int Game::endgame_screen(int result) {
@@ -305,7 +306,7 @@ int Game::control_panel() {
             cout << "What is the name of the file that you want to save the game to :    ";
             cin >> filename;
             save_game(filename);
-            break;
+            return 0;
         }
 
         if (choice == 200) {
@@ -315,18 +316,10 @@ int Game::control_panel() {
         if (choice == 400) {
             exit(0);
         }
-
-
     }
-
-
-
-
 }
 
-    int Game::control_game(int &exit) {
-//        system ("cls");
-//        std::system("cls");
+    int Game::control_game() {
         int move = 0;
         int endgame = 0;
         ClearScreen();
@@ -357,7 +350,6 @@ int Game::control_panel() {
                 cout << "What is the name of the file that you want to save the game to :    ";
                 cin >> filename;
                 save_game(filename);
-                break;
                 return 0;
             }
 
@@ -366,8 +358,7 @@ int Game::control_panel() {
             }
 
             if (from == 400) {
-                exit = 1;
-                return 0;
+                exit(0);
             }
 
             cout << "To:       ";
@@ -380,7 +371,8 @@ int Game::control_panel() {
                     if (endgame != 0) {
                         endgame_screen(endgame);
                     }
-                    control_game(exit);
+                    move = 0;
+                    control_game();
                 }
             }
             else {
@@ -392,6 +384,7 @@ int Game::control_panel() {
 
 }
 
+// wrapper function within the game to call board functions
 int Game::make_move(int from, int to) {
 
     int move = game_board->whole_move_procedure(from, to, turn);
@@ -405,39 +398,3 @@ int Game::make_move(int from, int to) {
     }
     return move;
 }
-
-
-
-
-
-//int Game::save_game() { //string filename
-//
-//    std::vector<int> v{0,1,2,4,8,16,32,64,128,256,512};
-//    std::ofstream outfile("test.data");
-//
-//    std::for_each(v.begin(), v.end(), [&outfile](int x){outfile << x << " ";});
-//
-//}
-
-//int Game::load_game() { //string filename
-//    vector<int> datavec;
-//    ifstream infile;
-//
-//    infile.open ("test.data", ios::in | ios::binary);
-//
-//    while (infile) {
-//        int val;
-//        infile.read(reinterpret_cast<char *>(&val), sizeof(int));
-//        if (infile.bad()) {
-//            throw std::runtime_error("Failed to read from infile!");
-//        }
-//        if (infile.eof()) break;
-//        datavec.push_back(val);
-//    }
-//
-//    cout << "Read data file. Contents of datavec: \n";
-//    for (auto val : datavec) {
-//        cout << val << ", ";
-//    }
-//    cout << "\nDone\n";
-//}
