@@ -54,6 +54,7 @@ public:
     Board();
     Board(vector <int> vector_black, vector <int> vector_white,
           vector<int> vector_black_king = {}, vector<int> vector_white_king = {});
+    ~Board() = default;
 
 };
 

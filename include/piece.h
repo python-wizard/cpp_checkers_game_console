@@ -49,6 +49,7 @@ public:
 
     // constructors
     Piece(Color color_, int location_);
+    ~Piece() = default;
 
 };
 

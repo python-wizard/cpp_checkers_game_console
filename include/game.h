@@ -27,6 +27,8 @@ public:
     int control_panel();
     int load_game(string filename);
     int save_game(string filename);
+
+    ~Game() = default;
 };
 
 #endif //CHECKERS_CONSOLE_GAME_H
